@@ -1,0 +1,64 @@
+{
+    "id":2,
+    "name":"前端开发",
+    "href":"/group/frontend.html",
+    "childrens":[
+      {
+        "id":1,
+        "name":"前端开发初级课程",
+        "href":"/group/frontend.html",
+        "courses":[
+          {
+            "id":1,
+            "name":"Web前端入门扫盲课程",
+            "href":"https://www.w3cschool.cn/wsfnp/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_wsfnp.jpeg?t=1617004793"
+          },
+          {
+            "id":2,
+            "name":"HTML入门课程(含HTML5)",
+            "href":"https://www.w3cschool.cn/htmlcourse/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_htmlcourse.png?t=1669875241"
+          }
+        ]
+      },
+      {
+        "id":2,
+        "name":"前端开发中级课程",
+        "href":"",
+        "courses":[
+          {
+            "id":1,
+            "name":"jQuery 入门课程",
+            "href":"https://www.w3cschool.cn/jquerycourse/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_jquerycourse.jpeg?t=1669879496"
+          },
+          {
+            "id":2,
+            "name":"Bootstrap3 入门课程",
+            "href":"https://www.w3cschool.cn/bootstrap3course/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_bootstrap3course.jpeg?t=1634192187"
+          }
+        ]
+      },
+      {
+        "id":3,
+        "name":"前端高级及应用课程",
+        "href":"",
+        "courses":[
+          {
+            "id":1,
+            "name":"Vue2入门课程",
+            "href":"https://www.w3cschool.cn/vuecourse/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_vuecourse.jpeg?t=1669880046"
+          },
+          {
+            "id":2,
+            "name":"Node.js 入门课程",
+            "href":"https://www.w3cschool.cn/orbls/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_orbls.jpeg?t=1624339359"
+          }
+        ]
+      }       
+    ]
+}

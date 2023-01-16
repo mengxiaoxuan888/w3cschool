@@ -66,33 +66,23 @@
             />
             <div class="search-dropdown">
               <ul class="search-dropdown-activity">
-                <li class="clearfix activity-item always">
-                  <div class="fl activity-item-title">职位课程</div>
+                <li class="clearfix activity-item always" v-for="item in searchDropdownActivity" :key="item.id">
+                  <div class="fl activity-item-title">{{item.name}}</div>
                   <a
-                    href="/group/senior/initfrontend?fcode=search_recommend"
+                    :href="item.href"
                     target="_blank"
                     class="activity-item-content"
-                    title="从零基础到前端开发就业"
-                    >从零基础到前端开发就业</a
+                    :title="item.title"
+                    >{{item.title}}</a
                   >
-                </li>
-                <li class="clearfix activity-item always">
-                  <div class="fl activity-item-title">职位课程</div>
-                  <a
-                    href="/group/senior/initphp?fcode=search_recommend"
-                    target="_blank"
-                    class="activity-item-content"
-                    title="PHP工程师从入门到入职"
-                    >PHP工程师从入门到入职</a
-                  >
-                </li>
+                </li>             
               </ul>
               <div class="search-dropdown-history">
                 <div class="history-title">热门搜索</div>
                 <ul class="clearfix history-list">
-                  <li class="fl history-list-item">Python</li>
-                  <li class="fl history-list-item">Java</li>
-                  <li class="fl history-list-item">HTML</li>
+                  <li class="fl history-list-item" v-for="(item, index) in historylistItems" :key="index">
+                    {{ item }}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -107,7 +97,13 @@
 export default {
   name: "MyHeader",
   data() {
-    return {};
+    return {
+      historylistItems: ["Python", "Java", "HTML"],
+      searchDropdownActivity:[
+        {id:1,name:"职位课程",href:"/group/senior/initfrontend?fcode=search_recommend",title:"从零基础到前端开发就业"},
+        {id:2,name:"职位课程",href:"/group/senior/initphp?fcode=search_recommend",title:"PHP工程师从入门到入职"}
+      ]
+    };
   },
 };
 </script>

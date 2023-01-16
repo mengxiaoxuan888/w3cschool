@@ -7,113 +7,51 @@
         </h2>
         <ul class="sider-nav-catalog">
           <!-- 新上好课 -->
-          <li class="catalog-item">
-            <a
-              class="title"
-              href="/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=2"
-              ><span>新上好课</span
-              ><img
-                class="new"
-                src="./images/new-ico.png"
-                alt="new"
-                width="22"
-                height="14" /><i class="i-icon i-icon-next"></i
-            ></a>
+          <li class="catalog-item" v-for="item in goodNewClass" :key="item.id">
+            <a class="title" :href="item.href">
+              <span>{{item.name}}</span>
+              <i class="i-icon i-icon-next"></i>
+            </a>
             <div class="children">
-              <div class="children-list">
+              <div class="children-list" v-for="children in item.childrens" :key="children.id">
                 <div class="clearfix children-list-head">
-                  <h3 class="fl children-list-head-title">新上好课</h3>
-                  <a
-                    class="fr children-list-head-more"
-                    href="/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=2"
-                    target="_blank"
-                    >更多&nbsp;&raquo;</a
-                  >
+                  <h3 class="fl children-list-head-title">{{children.name}}</h3>
+                  <a class="fr children-list-head-more" :href="children.href" target="_blank">
+                    更多&nbsp;&raquo;
+                  </a>
                 </div>
                 <ul class="clearfix children-list-content">
-                  <li class="course">
-                    <a
-                      href="/minicourse/play/antpython13"
-                      title="MySQL数据库入门实战- Python版"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_antpython13.png?t=1671761537"
-                        alt="MySQL数据库入门实战- Python版"
-                        width="150"
-                        height="84"
-                      />
+                  <li class="course" v-for="course in children.courses" :key="course.id">
+                    <a :href="course.href" :title="course.name" target="_blank">
+                      <img class="course-cover" :src="course.src" :alt="course.name" width="150" height="84"/>
                       <div class="single-ellipsis course-title">
-                        MySQL数据库入门实战- Python版
+                        {{course.name}}
                       </div>
                     </a>
-                  </li>
-                  <li class="course">
-                    <a
-                      href="/minicourse/play/antpython12"
-                      title="Python Django4开发入门到实战"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_antpython12.png?t=1671761513"
-                        alt="Python Django4开发入门到实战"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Python Django4开发入门到实战
-                      </div>
-                    </a>
-                  </li>
+                  </li>                 
                 </ul>
               </div>
-
-              <div class="children-list">
+            </div>
+          </li>
+          <!-- 前端开发 -->
+          <li class="catalog-item" v-for="item in frontend" :key="item.id">
+            <a class="title" :href="item.href">
+              <span>{{item.name}}</span><i class="i-icon i-icon-next"></i>
+            </a>
+            <div class="children">
+              <div class="children-list" v-for="children in item.childrens" :key="children.id">
                 <div class="clearfix children-list-head">
-                  <h3 class="fl children-list-head-title">热门推荐</h3>
-                  <a
-                    class="fr children-list-head-more"
-                    href="/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=1"
-                    target="_blank"
-                    >更多&nbsp;&raquo;</a
-                  >
+                  <h3 class="fl children-list-head-title">{{children.name}}</h3>
+                  <a class="fr children-list-head-more" :href="children.href" target="_blank">
+                    学习路径&nbsp;&raquo;
+                  </a>
                 </div>
                 <ul class="clearfix children-list-content">
-                  <li class="course">
-                    <a
-                      href="/minicourse/play/python3course"
-                      title="Python3 入门课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_python3course.png?t=1669195870"
-                        alt="Python3 入门课程"
-                        width="150"
-                        height="84"
-                      />
+                  <li class="course" v-for="course in children.courses" :key="course.id">
+                    <a :href="course.href" :title="course.name" target="_blank">
+                      <img class="course-cover" :src="course.src" :alt="course.name" width="150" height="84"/>
                       <div class="single-ellipsis course-title">
-                        Python3 入门课程
-                      </div>
-                    </a>
-                  </li>
-                  <li class="course">
-                    <a
-                      href="/minicourse/play/javaminicourse"
-                      title="Java入门课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_javaminicourse.png?t=1624329622"
-                        alt="Java入门课程"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Java入门课程
+                        {{course.name}}
                       </div>
                     </a>
                   </li>
@@ -121,144 +59,25 @@
               </div>
             </div>
           </li>
-
-          <li class="catalog-item">
-            <a class="title" href="/group/frontend.html"
-              ><span>前端开发</span><i class="i-icon i-icon-next"></i
+          <!-- Python系列 -->
+          <li class="catalog-item" v-for="item in pythoner" :key="item.id">
+            <a class="title" :href="item.href">
+              <span>{{item.name}}</span><i class="i-icon i-icon-next"></i
             ></a>
             <div class="children">
-              <div class="children-list">
+              <div class="children-list" v-for="children in item.childrens" :key="children.id">
                 <div class="clearfix children-list-head">
-                  <h3 class="fl children-list-head-title">前端开发初级课程</h3>
-                  <a
-                    class="fr children-list-head-more"
-                    href="/group/frontend.html"
-                    target="_blank"
-                    >学习路径&nbsp;&raquo;</a
-                  >
+                  <h3 class="fl children-list-head-title">{{children.name}}</h3>
+                  <a class="fr children-list-head-more" :href="children.href" target="_blank">
+                    学习路径&nbsp;&raquo;
+                  </a>
                 </div>
                 <ul class="clearfix children-list-content">
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/wsfnp/"
-                      title="Web前端入门扫盲课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_wsfnp.jpeg?t=1617004793"
-                        alt="Web前端入门扫盲课程"
-                        width="150"
-                        height="84"
-                      />
+                  <li class="course" v-for="course in children.courses" :key="course.id">
+                    <a :href="course.href" :title="course.name" target="_blank">
+                      <img class="course-cover" :src="course.src" :alt="course.name" width="150" height="84"/>
                       <div class="single-ellipsis course-title">
-                        Web前端入门扫盲课程
-                      </div>
-                    </a>
-                  </li>
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/htmlcourse/"
-                      title="HTML入门课程(含HTML5)"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_htmlcourse.png?t=1669875241"
-                        alt="HTML入门课程(含HTML5)"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        HTML入门课程(含HTML5)
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="children-list">
-                <div class="clearfix children-list-head">
-                  <h3 class="fl children-list-head-title">前端开发中级课程</h3>
-                </div>
-                <ul class="clearfix children-list-content">
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/jquerycourse/"
-                      title="jQuery 入门课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_jquerycourse.jpeg?t=1669879496"
-                        alt="jQuery 入门课程"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        jQuery 入门课程
-                      </div>
-                    </a>
-                  </li>
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/bootstrap3course/"
-                      title="Bootstrap3 入门课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_bootstrap3course.jpeg?t=1634192187"
-                        alt="Bootstrap3 入门课程"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Bootstrap3 入门课程
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="children-list">
-                <div class="clearfix children-list-head">
-                  <h3 class="fl children-list-head-title">
-                    前端高级及应用课程
-                  </h3>
-                </div>
-                <ul class="clearfix children-list-content">
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/vuecourse/"
-                      title="Vue2入门课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_vuecourse.jpeg?t=1669880046"
-                        alt="Vue2入门课程"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Vue2入门课程
-                      </div>
-                    </a>
-                  </li>
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/orbls/"
-                      title="Node.js 入门课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_orbls.jpeg?t=1624339359"
-                        alt="Node.js 入门课程"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Node.js 入门课程
+                        {{course.name}}
                       </div>
                     </a>
                   </li>
@@ -266,105 +85,7 @@
               </div>
             </div>
           </li>
-          <li class="catalog-item">
-            <a class="title" href="/group/pythoner.html"
-              ><span>Python系列</span><i class="i-icon i-icon-next"></i
-            ></a>
-            <div class="children">
-              <div class="children-list">
-                <div class="clearfix children-list-head">
-                  <h3 class="fl children-list-head-title">Python微课类课程</h3>
-                  <a
-                    class="fr children-list-head-more"
-                    href="/group/pythoner.html"
-                    target="_blank"
-                    >学习路径&nbsp;&raquo;</a
-                  >
-                </div>
-                <ul class="clearfix children-list-content">
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/python3course/"
-                      title="Python3 入门课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_python3course.png?t=1669195870"
-                        alt="Python3 入门课程"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Python3 入门课程
-                      </div>
-                    </a>
-                  </li>
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/pythonhigh/"
-                      title="Python3 进阶课程"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_pythonhigh.png?t=1669369221"
-                        alt="Python3 进阶课程"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Python3 进阶课程
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="children-list">
-                <div class="clearfix children-list-head">
-                  <h3 class="fl children-list-head-title">Python视频类课程</h3>
-                </div>
-                <ul class="clearfix children-list-content">
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/python1_txy/"
-                      title="Python爬虫技术入门指南"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_python1_txy.jpeg?t=1669372897"
-                        alt="Python爬虫技术入门指南"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Python爬虫技术入门指南
-                      </div>
-                    </a>
-                  </li>
-                  <li class="course">
-                    <a
-                      href="https://www.w3cschool.cn/scrapy_xb/"
-                      title="Scrapy框架实战：制作图片爬虫"
-                      target="_blank"
-                    >
-                      <img
-                        class="course-cover"
-                        src="//atts.w3cschool.cn/attachments/cover/cover_scrapy_xb.jpeg?t=1571659915"
-                        alt="Scrapy框架实战：制作图片爬虫"
-                        width="150"
-                        height="84"
-                      />
-                      <div class="single-ellipsis course-title">
-                        Scrapy框架实战：制作图片爬虫
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
+          <!-- Java系列 -->
           <li class="catalog-item">
             <a class="title" href="/group/javaer.html"
               ><span>Java系列</span><i class="i-icon i-icon-next"></i
@@ -507,6 +228,7 @@
               </div>
             </div>
           </li>
+          <!-- 后端开发 -->
           <li class="catalog-item">
             <a class="title" href="/group/cdev.html"
               ><span>后端开发</span><i class="i-icon i-icon-next"></i
@@ -563,6 +285,7 @@
               </div>
             </div>
           </li>
+          <!-- 编程基础与数据库 -->
           <li class="catalog-item">
             <a class="title" href="/group/bigdata.html"
               ><span>编程基础与数据库</span><i class="i-icon i-icon-next"></i
@@ -662,6 +385,7 @@
               </div>
             </div>
           </li>
+          <!-- 其它课程 -->
           <li class="catalog-item">
             <a class="title" href="/group/othercourse.html"
               ><span>其它课程</span><i class="i-icon i-icon-next"></i
@@ -930,7 +654,188 @@
 export default {
   name: "MenuType",
   data() {
-    return {};
+    return {
+      siderNavCatalog:["新上好课","前端开发","Python系列","Java系列","后端开发","编程基础与数据库","其它课程"],
+      goodNewClass:[
+        {
+          id:1,
+          name:"新上好课",
+          href:"/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=2",
+          childrens:[
+            {
+              id:1,
+              name:"新上好课",
+              href:"/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=2",
+              courses:[
+                {
+                  id:1,
+                  name:"MySQL数据库入门实战- Python版",
+                  href:"/minicourse/play/antpython13",
+                  src:"//atts.w3cschool.cn/attachments/cover/cover_antpython13.png?t=1671761537"
+                },
+                {
+                  id:2,
+                  name:"Python Django4开发入门到实战",
+                  href:"/minicourse/play/antpython12",
+                  src:"//atts.w3cschool.cn/attachments/cover/cover_antpython12.png?t=1671761513"
+                }
+              ]
+            },
+            {
+              id:2,
+              name:"热门推荐",
+              href:"/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=1",
+              courses:[
+                {
+                  id:1,
+                  name:"Python3 入门课程",
+                  href:"/minicourse/play/python3course",
+                  src:"//atts.w3cschool.cn/attachments/cover/cover_python3course.png?t=1669195870"
+                },
+                {
+                  id:2,
+                  name:"Java入门课程",
+                  href:"/minicourse/play/javaminicourse",
+                  src:"//atts.w3cschool.cn/attachments/cover/cover_javaminicourse.png?t=1624329622"
+                }
+              ]
+            }       
+          ]
+        }
+      ],
+      frontend:[
+        {
+          "id":2,
+          "name":"前端开发",
+          "href":"/group/frontend.html",
+          "childrens":[
+            {
+                "id":1,
+                "name":"前端开发初级课程",
+                "href":"/group/frontend.html",
+                "courses":[
+                  {
+                    "id":1,
+                    "name":"Web前端入门扫盲课程",
+                    "href":"https://www.w3cschool.cn/wsfnp/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_wsfnp.jpeg?t=1617004793"
+                  },
+                  {
+                    "id":2,
+                    "name":"HTML入门课程(含HTML5)",
+                    "href":"https://www.w3cschool.cn/htmlcourse/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_htmlcourse.png?t=1669875241"
+                  }
+                ]
+            },
+            {
+              "id":2,
+              "name":"前端开发中级课程",
+              "href":"",
+              "courses":[
+                {
+                  "id":1,
+                  "name":"jQuery 入门课程",
+                  "href":"https://www.w3cschool.cn/jquerycourse/",
+                  "src":"//atts.w3cschool.cn/attachments/cover/cover_jquerycourse.jpeg?t=1669879496"
+                },
+                {
+                  "id":2,
+                  "name":"Bootstrap3 入门课程",
+                  "href":"https://www.w3cschool.cn/bootstrap3course/",
+                  "src":"//atts.w3cschool.cn/attachments/cover/cover_bootstrap3course.jpeg?t=1634192187"
+                }
+              ]
+            },
+            {
+              "id":3,
+              "name":"前端高级及应用课程",
+              "href":"",
+              "courses":[
+                {
+                  "id":1,
+                  "name":"Vue2入门课程",
+                  "href":"https://www.w3cschool.cn/vuecourse/",
+                  "src":"//atts.w3cschool.cn/attachments/cover/cover_vuecourse.jpeg?t=1669880046"
+                },
+                {
+                  "id":2,
+                  "name":"Node.js 入门课程",
+                  "href":"https://www.w3cschool.cn/orbls/",
+                  "src":"//atts.w3cschool.cn/attachments/cover/cover_orbls.jpeg?t=1624339359"
+                }
+              ]
+            }       
+          ]
+        }
+      ],
+      pythoner:[
+        {
+            "id":3,
+            "name":"Python系列",
+            "href":"/group/pythoner.html",
+            "childrens":[
+              {
+                "id":1,
+                "name":"Python微课类课程",
+                "href":"/group/pythoner.html",
+                "courses":[
+                  {
+                    "id":1,
+                    "name":"Python3 入门课程",
+                    "href":"https://www.w3cschool.cn/python3course/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_python3course.png?t=1669195870"
+                  },
+                  {
+                    "id":2,
+                    "name":"Python3 进阶课程",
+                    "href":"https://www.w3cschool.cn/pythonhigh/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_pythonhigh.png?t=1669369221"
+                  }
+                ]
+              },
+              {
+                "id":2,
+                "name":"Python视频类课程",
+                "href":"",
+                "courses":[
+                  {
+                    "id":1,
+                    "name":"Python爬虫技术入门指南",
+                    "href":"https://www.w3cschool.cn/python1_txy/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_python1_txy.jpeg?t=1669372897"
+                  },
+                  {
+                    "id":2,
+                    "name":"Scrapy框架实战：制作图片爬虫",
+                    "href":"https://www.w3cschool.cn/scrapy_xb/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_scrapy_xb.jpeg?t=1571659915"
+                  }
+                ]
+              },
+              {
+                "id":3,
+                "name":"前端高级及应用课程",
+                "href":"",
+                "courses":[
+                  {
+                    "id":1,
+                    "name":"Vue2入门课程",
+                    "href":"https://www.w3cschool.cn/vuecourse/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_vuecourse.jpeg?t=1669880046"
+                  },
+                  {
+                    "id":2,
+                    "name":"Node.js 入门课程",
+                    "href":"https://www.w3cschool.cn/orbls/",
+                    "src":"//atts.w3cschool.cn/attachments/cover/cover_orbls.jpeg?t=1624339359"
+                  }
+                ]
+              }       
+            ]
+        }        
+      ]
+    };
   },
 };
 </script>

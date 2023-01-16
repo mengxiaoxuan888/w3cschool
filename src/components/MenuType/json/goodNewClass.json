@@ -1,0 +1,45 @@
+{
+    "id":1,
+    "name":"新上好课",
+    "href":"/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=2",
+    "childrens":[
+      {
+        "id":1,
+        "name":"新上好课",
+        "href":"/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=2",
+        "courses":[
+          {
+            "id":1,
+            "name":"MySQL数据库入门实战- Python版",
+            "href":"/minicourse/play/antpython13",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_antpython13.png?t=1671761537"
+          },
+          {
+            "id":2,
+            "name":"Python Django4开发入门到实战",
+            "href":"/minicourse/play/antpython12",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_antpython12.png?t=1671761513"
+          }
+        ]
+      },
+      {
+        "id":2,
+        "name":"热门推荐",
+        "href":"/courses?direction=0&amp;tag=0&amp;type=0&amp;condition=0&amp;order=1",
+        "courses":[
+          {
+            "id":1,
+            "name":"Python3 入门课程",
+            "href":"/minicourse/play/python3course",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_python3course.png?t=1669195870"
+          },
+          {
+            "id":2,
+            "name":"Java入门课程",
+            "href":"/minicourse/play/javaminicourse",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_javaminicourse.png?t=1624329622"
+          }
+        ]
+      }       
+    ]
+}
