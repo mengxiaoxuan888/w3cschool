@@ -191,5 +191,268 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* ------- 底部 ------- */
+#footer_item {
+    width: 100%;
+    min-width: 1130px;
+    background: #efefef;
+    border-top: 1px solid #ccc;
+    padding: 20px 0;
+}
+#footer {
+    clear: both;
+    position: relative;
+    margin: 0 auto;
+    width: 1130px;
+    height: auto;
+    overflow: hidden;
+}
+.footer-box {
+    float: left;
+    /*width: 19%;*/
+    width: 15.5%;
+    margin-left: 1%;
+    text-align: left;
+}
+.footer-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+.footer-items a,.footer-items p {
+    line-height: 26px;
+    font-size: 14px;
+    color: #333;
+}
+.footer-items p {
+    margin: 0;
+}
+.footer-items a .service-qrcode {
+    display: none;
+    width: 100px;
+    position: absolute;
+    top: 8px;
+    margin-left: 50px;
+}
+.footer-items a:hover .service-qrcode {
+    display: block;
+}
+.footer-box .tcode {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+}
+.footer-box .tcode-txt {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin: 0 10px;
+}
+.footer-bottom {
+    margin: 0px auto;
+    width: 1130px;
+    padding: 10px 0 0;
+    text-align: center;
+    line-height: 30px;
+}
+.footer-bottom p {
+    font-size: 13px;
+    color: #666;
+    line-height: 30px;
+}
+.footer-bottom p a {
+	color: #666;
+}
+.footer-bottom p span {
+	margin: 0 5px;
+}
+.footer-bottom .beian {
+    background: url(//7n.w3cschool.cn/statics/images/w3c/beianicon.png) no-repeat 0 0;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 4px;
+    margin-top: -4px;
+}
+#footer a:hover {
+    text-decoration: underline;
+    color: #fe6a00;
+}
+
+#wrapper {
+	width: 1129px;
+	margin: 25px auto 45px;
+	min-height: 600px;
+	overflow: hidden;
+}
+.wrapper-bg {
+	background: #ffffff;
+}
+.index-wrapper {
+	width: 1129px;
+	margin: 0 auto;
+	padding: 25px 0;
+	overflow: hidden;
+}
+
+#navsecond,#sidebar {
+	background: #efefef;
+}
+#sidebar { float: left; width: 190px; }
+
+#navsecond h2,#sidebar h2 {
+	font-size: 15px;
+	color: #333;
+	word-wrap: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+#navsecond li,#sidebar li {
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+	word-wrap: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+#navsecond li a,#sidebar li a,#navsecond h2 a {
+	color: #333;
+}
+#navsecond li a:hover,#sidebar li a:hover,#navsecond h2 a:hover {
+	color: #ff0000;
+}
+#course {
+	background-color: #B6B6B6;
+	padding: 7px 0;
+	border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+#course h2 {
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	letter-spacing: 3px;
+}
+#maincontent {
+	float: left;
+	width: 719px;
+	background-color: #ffffff;
+	padding: 0 15px;
+	font-size: 14px;
+	color: #333;
+}
+#maincontent h1 {
+	font-size: 20px;
+}
+#maincontent h1::before {
+    content: "";
+    background: #AE4141;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    margin-bottom: 3px;
+    vertical-align: middle;
+}
+#maincontent h2 {
+	font-size: 16px;
+}
+#maincontent div {
+	padding: 20px 0;
+	border-top: 1px solid #CCC;
+}
+#maincontent div:first-of-type {
+	border-top: none;
+}
+#maincontent ol,#maincontent ul {
+	margin-left: 25px;
+}
+#maincontent li,#maincontent p {
+	line-height: 24px;
+	margin-top: 10px;
+}
+#maincontent ol li {
+	list-style-type: decimal;
+}
+#maincontent ul li,#maincontent ol li li {
+	list-style-type: disc;
+}
+#maincontent ol ul li {
+	list-style-type: lower-alpha;
+}
+.news-content {
+    float: left;
+    width: 884px;
+    min-height: 600px;
+    margin-right: 15px;
+    background: #FFF;
+}
+.news-page {
+    padding: 20px;
+}
+.column-content {
+	padding: 20px;
+	background-color: #FFF;
+	min-height: 600px;
+	overflow: hidden;
+}
+.archive-content li {
+	height: 30px;
+	line-height: 30px;
+	padding: 10px 0;
+	border-bottom: 1px dashed #DDD;
+}
+.archive-content li h4 {
+	font-weight: 500;
+	font-size: 14px;
+}
+.archive-list span {
+	float: right;
+	font-size: 13px;
+	color: #666;
+}
+.page-header {
+	margin-bottom: 10px;
+}
+.page-header h2 {
+	border-bottom: 1px solid #DDD;
+	font-size: 24px;
+    font-weight: 500;
+	color: #333;
+	padding-bottom: 10px;
+}
+.page-header .intro {
+	font-size: 16px;
+	color: #333;
+	margin-top: 20px;
+}
+.bread-nav {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.bread-nav img {
+	vertical-align: middle;
+}
+.bread-nav-banner,.bread-nav-banner a {
+    color: #fff;
+    opacity: 0.8;
+}
+.bread-nav-banner a:hover {
+    opacity: 1;
+}
+.abox {
+	text-align: center;
+	padding: 15px 0;
+}
+.sidebar-box .tcode {
+	margin: 15px 0 0;
+	text-align: center;
+}
 </style>

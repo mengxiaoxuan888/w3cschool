@@ -14,7 +14,7 @@
               ><span>新上好课</span
               ><img
                 class="new"
-                src="//7n.w3cschool.cn/statics/images/w3c/new-ico.png"
+                src="./images/new-ico.png"
                 alt="new"
                 width="22"
                 height="14" /><i class="i-icon i-icon-next"></i
@@ -730,7 +730,7 @@
               stat="sslink-1"
             >
               <img
-                src="/statics/images/7662.png"
+                src="./images/7662.png"
                 alt="2022年12月迎战2023新活动"
                 width="100%"
                 height="100%"
@@ -744,7 +744,7 @@
               stat="sslink-1"
             >
               <img
-                src="/statics/images/25257.png"
+                src="./images/25257.png"
                 alt="python实战：数据图表可视化webbanner"
                 width="100%"
                 height="100%"
@@ -758,7 +758,7 @@
               stat="sslink-1"
             >
               <img
-                src="/statics/images/49689.png"
+                src="./images/49689.png"
                 alt="Python处理Excel实现办公自动化webbanner"
                 width="100%"
                 height="100%"
@@ -772,7 +772,7 @@
               stat="sslink-1"
             >
               <img
-                src="/statics/images/27866.png"
+                src="./images/27866.png"
                 alt="Python并发编程webbanner"
                 width="100%"
                 height="100%"
@@ -786,7 +786,7 @@
               stat="sslink-1"
             >
               <img
-                src="/statics/images/73410.png"
+                src="./images/73410.png"
                 alt="python爬虫从入门到实战webbanner"
                 width="100%"
                 height="100%"
@@ -807,7 +807,7 @@
 
         <div class="carousel-button-prev">
           <img
-            src="//7n.w3cschool.cn/statics/images/w3c/l-btn.png"
+            src="./images/l-btn.png"
             alt="上一张"
             width="26"
             height="50"
@@ -815,7 +815,7 @@
         </div>
         <div class="carousel-button-next">
           <img
-            src="//7n.w3cschool.cn/statics/images/w3c/r-btn.png"
+            src="./images/r-btn.png"
             alt="下一张"
             width="26"
             height="50"
@@ -935,5 +935,129 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* ------- main ------- */
+#main { height: 272px; }
+#main .index-container { position: relative; height: 100%; }
+/* ------- main ------- */
+#main { height: 272px; }
+#main .index-container { position: relative; height: 100%; }
+
+
+/* 侧边导航 */
+.sider-nav { position: absolute; top: -52px; left: 0; width: 220px; }
+.sider-nav-title { height: 52px; padding-left: 18px; line-height: 52px; font-size: 16px; font-weight: normal; color: #fff; background-color: #fe6a00; border-radius: 4px 4px 0 0; }
+.sider-nav-title .i-icon { margin-right: 10px; font-size: 22px; }
+
+.sider-nav-catalog { position: relative; height: 317px; background-color: #fff; border-width: 0 0 1px 1px; border-style: solid; border-color: #eee; }
+.sider-nav-catalog .catalog-item { height: 14.28571429%; }
+.sider-nav-catalog .catalog-item + .catalog-item { border-top: 1px solid #eee; }
+.sider-nav-catalog .catalog-item:hover .title { color: #fe6a00; background-color: #f5f5f5; }
+.sider-nav-catalog .catalog-item:hover .title .i-icon { color: #fe6a00; }
+.sider-nav-catalog .catalog-item .title { position: relative; display: block; height: 100%; padding-left: 18px; font-size: 15px; }
+.sider-nav-catalog .catalog-item .title::before { content: ""; display: inline-block; height: 100%; vertical-align: middle; }
+.sider-nav-catalog .catalog-item .title span { display: inline-block; vertical-align: middle; }
+.sider-nav-catalog .catalog-item .title .new { position: relative; top: -6px; left: 4px; }
+.sider-nav-catalog .catalog-item .title .i-icon { position: absolute; top: 50%; right: 15px; margin-top: -11px; font-size: 15px; color: #aaa; line-height: inherit; }
+
+.sider-nav-catalog .catalog-item .children { display: none; position: absolute; top: 0; left: 100%; z-index: 10; width: 920px; min-height: 317px; line-height: 1.5; background-color: #fff; border: 1px solid #eee; box-shadow: 0 0 4px 0 rgba(102, 102, 102, .25); }
+.sider-nav-catalog .catalog-item:hover .children { display: block; }
+.sider-nav-catalog .catalog-item .children-list { padding: 0 18px; }
+.sider-nav-catalog .catalog-item .children-list-head { padding: 15px 0 12px; }
+.sider-nav-catalog .catalog-item .children-list-head-title { font-size: 15px; font-weight: 600; }
+.sider-nav-catalog .catalog-item .children-list-head-more { line-height: 22px; color: #fe6a00; }
+.sider-nav-catalog .catalog-item .children-list + .children-list .children-list-title { border-top: 1px solid #e6e6e6; }
+.sider-nav-catalog .catalog-item .children-list-content { margin-right: -33px; }
+
+.sider-nav-catalog .children .course { float: left; margin-right: 33px; margin-bottom: 18px; font-size: 0; -webkit-transition: all 0.24s ease-in; transition: all 0.24s ease-in; }
+.sider-nav-catalog .children .course:hover { -webkit-transform: translateY(-6px); transform: translateY(-6px); }
+.sider-nav-catalog .children .course > a { display: block; width: 150px; }
+.sider-nav-catalog .children .course-cover { display: block; border-radius: 4px; }
+.sider-nav-catalog .children .course-title { width: 100%; padding-top: 6px; font-size: 13px; color: #333; }
+
+@media (min-width: 1300px) {
+    #main { height: 312px; }
+    .sider-nav-catalog { height: 364px; }
+    .sider-nav-catalog .catalog-item .title .i-icon { line-height: inherit; }
+    .sider-nav-catalog .catalog-item .children { width: 1020px; min-height: 364px; }
+    .sider-nav-catalog .catalog-item .children-list { padding: 0 30px; }
+    .sider-nav-catalog .catalog-item .children-list-content { margin-right: -52px; }
+
+    .sider-nav-catalog .children .course { margin-right: 52px; }
+}
+
+
+/* banner */
+.banner { width: 680px; height: 100%; margin-left: 220px; background-color: #fff; }
+
+.carousel { position: relative; }
+.carousel-wrapper { height: 100%; }
+.carousel-slide { position: relative; display: none; height: 100%; }
+.carousel-slide > a { display: block; height: 100%; }
+
+.carousel-pagination { z-index: 9; position: absolute; left: 0; bottom: 6%; width: 100%; height: 18px; line-height: 18px; text-align: center; }
+.carousel-pagination-bullets { display: inline-block; padding: 0 12px; background-color: rgba(0, 0, 0, 0.1); border-radius: 9px; }
+.carousel-pagination-bullet { display: inline-block; width: 8px; height: 8px; margin: 0 4px; border: 1px solid #fff; border-radius: 50%; cursor: pointer; }
+.carousel-pagination-bullet.cur { background-color: #fff; }
+
+.carousel-button-prev, .carousel-button-next { position: absolute; top: 50%; z-index: 9; width: 26px; height: 50px; margin-top: -25px; cursor: pointer; filter: alpha(opacity=60); opacity: 0.6; }
+.carousel-button-prev:hover, .carousel-button-next:hover { filter: alpha(opacity=90); opacity: 0.9; }
+.carousel-button-prev { left: 10px; }
+.carousel-button-next { right: 10px; }
+
+@media (min-width: 1300px) {
+    .banner { width: 780px; }
+}
+
+
+/* 快捷登录 */
+.quick-login { width: 240px; height: 100%; padding: 10px 14px; background-color: #fff; border: 1px solid #eee; }
+
+/* 未登录 */
+.quick-login-not .login-title { font-size: 18px; font-weight: normal; text-align: center; color: #333; }
+.quick-login-not .login-title::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; vertical-align: middle; background-color: #fe6a00; }
+
+.quick-login-not .login-form { margin-top: 10px; }
+.quick-login-not .login-form .form-item { position: relative; }
+.quick-login-not .login-form .form-item + .form-item { margin-top: 8px; }
+
+.quick-login-not .login-form .form-item .input-prefix { position: absolute; top: 7px; left: 8px; }
+.quick-login-not .login-form .form-item .input-prefix .i-icon { font-size: 18px; color: #cdcdcd; }
+.quick-login-not .login-form .form-item .input { width: 100%; padding: 6px 8px 6px 40px; border: 1px solid #ddd; border-radius: 3px; }
+.quick-login-not .login-form .form-item .input:hover { border-color: #aaa; }
+.quick-login-not .login-form .form-item .input:focus { border-color: #aaa; }
+
+.quick-login-not .login-form .form-item .form-button { display: block; width: 100%; height: 32px; font-size: 15px; line-height: 32px; text-align: center; color: #fff; background-color: #fe6a00; border: none; border-radius: 3px; cursor: pointer;
+    -webkit-transition: opacity 0.24s;
+            transition: opacity 0.24s;
+}
+.quick-login-not .login-form .form-item .form-button:hover { background-color: #f16500;}
+
+#scode-form-item { display: none; }
+#scode-form-item .input { width: 78px; padding: 6px 8px; }
+#scode-img { vertical-align: top; }
+
+#check-form-item { font-size: 13px; }
+#check-form-item .checkbox { margin-right: 2px; vertical-align: middle; }
+
+/* 第三方登录 */
+.quick-login-not .login-sns { margin-top: 10px; }
+.quick-login-not .login-sns-row { line-height: 30px; }
+.quick-login-not .login-sns-row + .login-sns-row { margin-top: 4px; }
+.quick-login-not .login-sns-row .i-icon { margin-right: 4px; font-size: 30px; color: #b5b9bd; vertical-align: top; -webkit-transition: color .24s ease; transition: color .24s ease; }
+.quick-login-not .login-sns-row .sns-qq > span { margin-right: 5px; }
+
+.login-sns-row .sns-wechat:hover .i-icon { color: #3bae56; }
+.login-sns-row .sns-qq:hover .i-icon { color: #56abe4; }
+.login-sns-row .sns-github:hover .i-icon { color: #24292e; }
+.login-sns-row .sns-weibo:hover .i-icon { color: #eb4738; }
+.login-sns-row .regist:hover .i-icon { color: #fe6a00; }
+
+@media (min-width: 1300px) {
+    .quick-login { padding-top: 12px; padding-bottom: 12px; }
+    .quick-login-not .login-form { margin-top: 16px; }
+    .quick-login-not .login-form .form-item + .form-item { margin-top: 14px; }
+    .quick-login-not .login-sns { margin-top: 16px; }
+    .quick-login-not .login-sns-row + .login-sns-row { margin-top: 10px; }
+}
 </style>

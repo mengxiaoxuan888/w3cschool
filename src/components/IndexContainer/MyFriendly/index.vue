@@ -30,5 +30,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* 友情链接 */
+.friendly-layer .title { font-size: 16px; font-weight: 600; }
+.friendly-layer .title::after { content: ":"; position: relative; top: -0.5px; margin: 0 8px 0 2px; }
+.friendly-layer .link-wrap { padding-top: 2px; margin-left: 80px; }
+.friendly-layer .link { display: inline-block; margin: 0 20px 12px 0; font-size: 14px; }
+
 </style>

@@ -102,5 +102,21 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* 最近更新、友情链接 */
+.update-layer { padding: 18px 0; margin-left: -24px; }
+.update-layer .update-wrap { width: 350px; margin-left: 24px; }
+.update-layer .update-wrap-tutorial { width: 392px;}
+.update-layer .update-wrap-title { margin-bottom: 15px; }
+.update-layer .update-wrap-title .title { font-size: 16px; font-weight: 600; }
+.update-layer .update-wrap-title .more-btn {float: right;font-size: 14px;color: #666;line-height: 26px; }
+.update-layer .update-list { padding: 15px; border-radius: 4px; box-shadow: 0 4px 30px 0 rgba(238, 242, 245, 0.8); }
+.update-layer .update-list li { height: 26px; line-height: 26px; margin-bottom: 8px;}
+.update-layer .update-list li a { display: inline-block; font-size: 14px; width: 80%; word-wrap: normal; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.update-layer .update-list li a::before { content: ""; background: #fe6a00; display: inline-block; width: 4px; height: 4px; margin-right: 8px; vertical-align: middle; border-radius: 50%; }
+.update-layer .update-list li .update-time { float: right; font-size: 13px; color: #666; }
+.update-layer .update-list li .text-split::after {content: "-"; margin: 0 6px;}
+@media (min-width: 1300px) {
+    .update-layer .update-wrap-tutorial { width: 492px;} 
+}
 </style>

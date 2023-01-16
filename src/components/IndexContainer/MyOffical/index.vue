@@ -80,5 +80,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* 教程 - 热门极客教程 */
+.official-tutorial-layer .tutorial-project { margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 30px 0 rgba(238, 242, 245, 0.8); }
+.official-tutorial-layer .tutorial-project .project-list-item-wrap { width: 25%; }
+.official-tutorial-layer .tutorial-project .project-list { padding-top: 10px; padding-bottom: 30px; }
+
 </style>

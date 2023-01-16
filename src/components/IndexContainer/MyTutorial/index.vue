@@ -727,5 +727,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* 教程 - 极客教程 */
+.tutorial-tabs .tabs-nav { position: -webkit-sticky; position: sticky; top: 20px; overflow: hidden; width: 220px; border-radius: 8px; box-shadow: 0 4px 30px 0 rgba(238, 242, 245, 0.8); }
+.tutorial-tabs .tabs-nav .tabs-tab { padding: 4px 12px; font-size: 15px; line-height: 40px; cursor: pointer; -webkit-transition: all 0.24s; transition: all 0.24s; }
+.tutorial-tabs .tabs-nav .tabs-tab:hover { color: #fe6a00; background-color: #f4f5f6; }
+.tutorial-tabs .tabs-nav .tabs-tab.on { color: #fff; background-color: #fe6a00; }
+.tutorial-tabs .tabs-panel { padding-top: 20px; margin-left: 244px; border-radius: 8px; box-shadow: 0 4px 30px 0 rgba(238, 242, 245, 0.8); }
+.tutorial-tabs .tabs-panel .tutorial-project .project-list { padding-bottom: 40px; }
+
 </style>
