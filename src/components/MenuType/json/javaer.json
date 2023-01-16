@@ -1,0 +1,64 @@
+{
+    "id":4,
+    "name":"Java系列",
+    "href":"/group/pythoner.html",
+    "childrens":[
+      {
+        "id":1,
+        "name":"Python微课类课程",
+        "href":"/group/pythoner.html",
+        "courses":[
+          {
+            "id":1,
+            "name":"Python3 入门课程",
+            "href":"https://www.w3cschool.cn/python3course/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_python3course.png?t=1669195870"
+          },
+          {
+            "id":2,
+            "name":"Python3 进阶课程",
+            "href":"https://www.w3cschool.cn/pythonhigh/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_pythonhigh.png?t=1669369221"
+          }
+        ]
+      },
+      {
+        "id":2,
+        "name":"Python视频类课程",
+        "href":"",
+        "courses":[
+          {
+            "id":1,
+            "name":"Python爬虫技术入门指南",
+            "href":"https://www.w3cschool.cn/python1_txy/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_python1_txy.jpeg?t=1669372897"
+          },
+          {
+            "id":2,
+            "name":"Scrapy框架实战：制作图片爬虫",
+            "href":"https://www.w3cschool.cn/scrapy_xb/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_scrapy_xb.jpeg?t=1571659915"
+          }
+        ]
+      },
+      {
+        "id":3,
+        "name":"前端高级及应用课程",
+        "href":"",
+        "courses":[
+          {
+            "id":1,
+            "name":"Vue2入门课程",
+            "href":"https://www.w3cschool.cn/vuecourse/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_vuecourse.jpeg?t=1669880046"
+          },
+          {
+            "id":2,
+            "name":"Node.js 入门课程",
+            "href":"https://www.w3cschool.cn/orbls/",
+            "src":"//atts.w3cschool.cn/attachments/cover/cover_orbls.jpeg?t=1624339359"
+          }
+        ]
+      }       
+    ]
+}
