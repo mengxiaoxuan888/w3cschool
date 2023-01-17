@@ -1,0 +1,35 @@
+{
+  "id":1,
+  "databgcolor":"#FECBA7",
+  "href":"https://www.w3cschool.cn/minicourse/play/antpython08?fcode=webbanner",
+  "src":"./statics/images/7662.png",
+  "alt":"2022年12月迎战2023新活动"
+},
+{
+  "id":2,
+  "databgcolor":"#f0eade",
+  "href":"https://www.w3cschool.cn/minicourse/play/antpython08?fcode=webbanner",
+  "src":"./statics/images/25257.png",
+  "alt":"python实战：数据图表可视化webbanner"
+},
+{
+  "id":3,
+  "databgcolor":"#0B1F91",
+  "href":"https://www.w3cschool.cn/minicourse/play/antpython09?fcode=webbanner",
+  "src":"./statics/images/49689.png",
+  "alt":"Python处理Excel实现办公自动化webbanner"
+},
+{
+  "id":4,
+  "databgcolor":"#cfcefe",
+  "href":"https://www.w3cschool.cn/minicourse/play/antpython04?fcode=webbanner",
+  "src":"./statics/images/27866.png",
+  "alt":"Python并发编程webbanner"
+},
+{
+  "id":5,
+  "databgcolor":"#cfeef6",
+  "href":"https://www.w3cschool.cn/minicourse/play/antpython03?fcode=webbanner",
+  "src":"./statics/images/73410.png",
+  "alt":"python爬虫从入门到实战webbanner"
+},

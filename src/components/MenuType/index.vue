@@ -5,6 +5,7 @@
         <h2 class="sider-nav-title">
           <i class="i-icon i-icon-menu"></i>编程课程分类
         </h2>
+        <!-- 菜单栏 -->
         <ul class="sider-nav-catalog">
           <!-- 新上好课 -->
           <li class="catalog-item" v-for="item in goodNewClass" :key="item.id">
@@ -196,105 +197,27 @@
         </ul>
       </div>
 
+      <!-- 轮播图 -->
       <div class="fl banner carousel">
         <div class="carousel-wrapper">
-          <div class="carousel-slide" data-bgcolor="#FECBA7">
-            <a
-              href="https://www.w3cschool.cn/activity/doubleEleven?fcode=webbenner"
-              target="_blank"
-              stat="sslink-1"
-            >
-              <img
-                src="./images/7662.png"
-                alt="2022年12月迎战2023新活动"
-                width="100%"
-                height="100%"
-              />
-            </a>
-          </div>
-          <div class="carousel-slide" data-bgcolor="#f0eade">
-            <a
-              href="https://www.w3cschool.cn/minicourse/play/antpython08?fcode=webbanner"
-              target="_blank"
-              stat="sslink-1"
-            >
-              <img
-                src="./images/25257.png"
-                alt="python实战：数据图表可视化webbanner"
-                width="100%"
-                height="100%"
-              />
-            </a>
-          </div>
-          <div class="carousel-slide" data-bgcolor="#0B1F91">
-            <a
-              href="https://www.w3cschool.cn/minicourse/play/antpython09?fcode=webbanner"
-              target="_blank"
-              stat="sslink-1"
-            >
-              <img
-                src="./images/49689.png"
-                alt="Python处理Excel实现办公自动化webbanner"
-                width="100%"
-                height="100%"
-              />
-            </a>
-          </div>
-          <div class="carousel-slide" data-bgcolor="#cfcefe">
-            <a
-              href="https://www.w3cschool.cn/minicourse/play/antpython04?fcode=webbanner"
-              target="_blank"
-              stat="sslink-1"
-            >
-              <img
-                src="./images/27866.png"
-                alt="Python并发编程webbanner"
-                width="100%"
-                height="100%"
-              />
-            </a>
-          </div>
-          <div class="carousel-slide" data-bgcolor="#cfeef6">
-            <a
-              href="https://www.w3cschool.cn/minicourse/play/antpython03?fcode=webbanner"
-              target="_blank"
-              stat="sslink-1"
-            >
-              <img
-                src="./images/73410.png"
-                alt="python爬虫从入门到实战webbanner"
-                width="100%"
-                height="100%"
-              />
+          <div class="carousel-slide"  v-for="item in carouselSlide" :key="item.id" :data-bgcolor="item.databgcolor">
+            <a :href="item.href" target="_blank" stat="sslink-1">
+              <img :src="item.src" :alt="item.alt" width="100%" height="100%"/>
             </a>
           </div>
         </div>
 
         <div class="carousel-pagination">
           <div class="carousel-pagination-bullets">
-            <span class="carousel-pagination-bullet cur"></span>
-            <span class="carousel-pagination-bullet"></span>
-            <span class="carousel-pagination-bullet"></span>
-            <span class="carousel-pagination-bullet"></span>
-            <span class="carousel-pagination-bullet"></span>
+            <span :class="item==1?'carousel-pagination-bullet cur':'carousel-pagination-bullet'" v-for="item in carouselSlide.length" :key="item"></span>
           </div>
         </div>
 
         <div class="carousel-button-prev">
-          <img
-            src="./images/l-btn.png"
-            alt="上一张"
-            width="26"
-            height="50"
-          />
+          <img src="./images/l-btn.png" alt="上一张" width="26" height="50"/>
         </div>
         <div class="carousel-button-next">
-          <img
-            src="./images/r-btn.png"
-            alt="下一张"
-            width="26"
-            height="50"
-          />
+          <img src="./images/r-btn.png" alt="下一张" width="26" height="50"/>
         </div>
       </div>
 
@@ -305,9 +228,7 @@
             <form id="loginform" action="/checklogin" method="post">
               <input type="hidden" name="refer" value="" />
               <div class="form-item">
-                <span class="input-prefix"
-                  ><i class="i-icon i-icon-my"></i
-                ></span>
+                <span class="input-prefix"><i class="i-icon i-icon-my"></i></span>
                 <input
                   class="input"
                   id="username"
@@ -319,9 +240,7 @@
                 />
               </div>
               <div class="form-item">
-                <span class="input-prefix"
-                  ><i class="i-icon i-icon-locked"></i
-                ></span>
+                <span class="input-prefix"><i class="i-icon i-icon-locked"></i></span>
                 <input
                   class="input"
                   id="password"
@@ -358,9 +277,7 @@
                     checked
                   /><span>保持登录状态</span>
                 </div>
-                <a class="fr" href="/checkmphone?type=findpwd" rel="nofollow"
-                  >忘记密码？</a
-                >
+                <a class="fr" href="/checkmphone?type=findpwd" rel="nofollow">忘记密码？</a>
               </div>
 
               <div class="form-item">
@@ -850,6 +767,43 @@ export default {
             ]
         }        
       ],
+      carouselSlide:[
+        {
+          "id":1,
+          "databgcolor":"#FECBA7",
+          "href":"https://www.w3cschool.cn/minicourse/play/antpython08?fcode=webbanner",
+          "src":"./statics/images/7662.png",
+          "alt":"2022年12月迎战2023新活动"
+        },
+        {
+          "id":2,
+          "databgcolor":"#f0eade",
+          "href":"https://www.w3cschool.cn/minicourse/play/antpython08?fcode=webbanner",
+          "src":"./statics/images/25257.png",
+          "alt":"python实战：数据图表可视化webbanner"
+        },
+        {
+          "id":3,
+          "databgcolor":"#0B1F91",
+          "href":"https://www.w3cschool.cn/minicourse/play/antpython09?fcode=webbanner",
+          "src":"./statics/images/49689.png",
+          "alt":"Python处理Excel实现办公自动化webbanner"
+        },
+        {
+          "id":4,
+          "databgcolor":"#cfcefe",
+          "href":"https://www.w3cschool.cn/minicourse/play/antpython04?fcode=webbanner",
+          "src":"./statics/images/27866.png",
+          "alt":"Python并发编程webbanner"
+        },
+        {
+          "id":5,
+          "databgcolor":"#cfeef6",
+          "href":"https://www.w3cschool.cn/minicourse/play/antpython03?fcode=webbanner",
+          "src":"./statics/images/73410.png",
+          "alt":"python爬虫从入门到实战webbanner"
+        },
+      ]
     };
   },
 };
