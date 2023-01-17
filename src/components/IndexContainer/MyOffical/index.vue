@@ -5,15 +5,11 @@
     </h2>
     <div class="tutorial-project">
       <ul class="project-list">
-        <li class="project-list-item-wrap">
-          <a
-            class="clearfix project-list-item"
-            href="/python/dict.html"
-            title="Python Cheat Sheet"
-          >
+        <li class="project-list-item-wrap" v-for="item in offProjectList" :key="item.id">
+          <a class="clearfix project-list-item" :href="item.href" :title="item.title">
             <div class="fl cover">
-              <!-- <img src="/statics/images/dict/python-logo.png" alt="Python Cheat Sheet" width="64"> -->
-              <div
+              <img :src="item.src" :alt="item.alt" width="64">
+              <!-- <div
                 style="
                   background-image: url(/statics/images/dict/python-logo.png);
                   background-image: none\9;
@@ -25,47 +21,16 @@
                   background-color: #fff;
                 "
                 class="logo"
-              ></div>
+              ></div> -->
             </div>
             <div class="info">
-              <h4 class="single-ellipsis info-title">Python</h4>
+              <h4 class="single-ellipsis info-title">{{item.name}}</h4>
               <p class="double-ellipsis info-des">
-                Python
-                是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。
+                {{item.info}}
               </p>
             </div>
           </a>
-        </li>
-        <li class="project-list-item-wrap">
-          <a
-            class="clearfix project-list-item"
-            href="/jquery/dict.html"
-            title="jQuery Cheat Sheet"
-          >
-            <div class="fl cover">
-              <!-- <img src="/statics/images/dict/jquery-logo.jpg" alt="jQuery Cheat Sheet" width="64"> -->
-              <div
-                style="
-                  background-image: url(/statics/images/dict/jquery-logo.jpg);
-                  background-image: none\9;
-                  width: 64px;
-                  height: 64px;
-                  background-size: 90%;
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-color: #fff;
-                "
-              ></div>
-            </div>
-            <div class="info">
-              <h4 class="single-ellipsis info-title">jQuery</h4>
-              <p class="double-ellipsis info-des">
-                jQuery 是一个 JavaScript 库。 jQuery 极大地简化了 JavaScript
-                编程。 jQuery 很容易学习。
-              </p>
-            </div>
-          </a>
-        </li>
+        </li>       
       </ul>
     </div>
   </div>
@@ -75,7 +40,28 @@
 export default {
   name: "MyOffical",
   data() {
-    return {};
+    return {
+      offProjectList:[
+        {
+          "id":1,
+          "href":"/python/dict.html",
+          "title":"Python Cheat Sheet",
+          "src":"./statics/images/python-logo.png",
+          "alt":"Python Cheat Sheet",
+          "name":"Python",
+          "info":"Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。"
+        },
+        {
+          "id":2,
+          "href":"/jquery/dict.html",
+          "title":"jQuery Cheat Sheet",
+          "src":"./statics/images/jquery-logo.jpg",
+          "alt":"jQuery Cheat Sheet",
+          "name":"jQuery",
+          "info":"jQuery 是一个 JavaScript 库。jQuery 极大地简化了 JavaScript 编程。 jQuery 很容易学习。"
+        },
+      ]
+    };
   },
 };
 </script>

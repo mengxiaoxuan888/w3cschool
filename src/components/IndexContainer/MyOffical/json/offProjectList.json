@@ -1,0 +1,20 @@
+[
+    {
+      "id":1,
+      "href":"/python/dict.html",
+      "title":"Python Cheat Sheet",
+      "src":"./statics/images/python-logo.png",
+      "alt":"Python Cheat Sheet",
+      "name":"Python",
+      "info":"Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。"
+    },
+    {
+      "id":2,
+      "href":"/jquery/dict.html",
+      "title":"jQuery Cheat Sheet",
+      "src":"./statics/images/jquery-logo.jpg",
+      "alt":"jQuery Cheat Sheet",
+      "name":"jQuery",
+      "info":"jQuery 是一个 JavaScript 库。jQuery 极大地简化了 JavaScript 编程。 jQuery 很容易学习。"
+    }
+  ]

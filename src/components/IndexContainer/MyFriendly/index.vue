@@ -2,20 +2,9 @@
   <div class="clearfix layer friendly-layer">
     <h4 class="fl title">友情链接</h4>
     <div class="link-wrap">
-      <a
-        class="link"
-        href="https://www.w3cschool.cn/"
-        title="W3Cschool"
-        target="_blank"
-        >W3Cschool</a
-      >
-      <a
-        class="link"
-        href="https://www.w3cschool.cn/"
-        title="W3C编程狮"
-        target="_blank"
-        >编程狮(W3C)</a
-      >
+      <a v-for="item in linkWrap" :key="item.id" class="link" :href="item.href" :title="item.title" target="_blank">
+        {{item.name}}
+      </a>
       <a class="link" href="/links" target="_blank">更多&raquo;</a>
     </div>
   </div>
@@ -25,7 +14,22 @@
 export default {
   name: "MyFriendly",
   data() {
-    return {};
+    return {
+      linkWrap:[
+        {
+          "id":1,
+          "href":"https://www.w3cschool.cn/",
+          "title":"W3Cschool",
+          "name":"W3Cschool"
+        },
+        {
+          "id":2,
+          "href":"https://www.w3cschool.cn/",
+          "title":"W3C编程狮",
+          "name":"编程狮(W3C)"
+        }
+      ]
+    };
   },
 };
 </script>

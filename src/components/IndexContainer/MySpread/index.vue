@@ -2,21 +2,9 @@
   <div class="layer spread-layer">
     <div class="layer-content">
       <p>
-        <a
-          href="https://www.w3cschool.cn/group/senior/initfrontend?fcode=index_focusitem_initfrontend"
-          target="_blank"
-          ><img src="./images/1621598421575215.png" alt="初级前端体系课程" /></a
-        ><a
-          href="https://www.w3cschool.cn/group/vip/pythoner?fcode=index_focusitem"
-          target="_blank"
-          ><img src="./images/1595930304329711.png" alt="Python零基础入门" /></a
-        ><a href="https://www.w3cschool.cn/codecamp/" target="_blank"
-          ><img src="./images/1606441706220683.png" alt="编程实战" /></a
-        ><a
-          href="https://www.w3cschool.cn/group/senior/initphp?fcode=index_focusitem"
-          target="_blank"
-          ><img src="./images/1621598437368241.png" alt="php工程师"
-        /></a>
+        <a v-for="item in layerContent" :key="item.id" :href="item.href" target="_blank">
+          <img :src="item.src" :alt="item.alt" />
+        </a>
       </p>
     </div>
   </div>
@@ -26,7 +14,34 @@
 export default {
   name: "MySpread",
   data() {
-    return {};
+    return {
+      layerContent:[
+        {
+          "id":1,
+          "href":"https://www.w3cschool.cn/group/senior/initfrontend?fcode=index_focusitem_initfrontend",
+          "src":"./statics/images/1621598421575215.png",
+          "alt":"初级前端体系课程"
+        },
+        {
+          "id":2,
+          "href":"https://www.w3cschool.cn/group/vip/pythoner?fcode=index_focusitem",
+          "src":"./statics/images/1595930304329711.png",
+          "alt":"Python零基础入门"
+        },
+        {
+          "id":3,
+          "href":"https://www.w3cschool.cn/codecamp/",
+          "src":"./statics/images/1606441706220683.png",
+          "alt":"编程实战"
+        },
+        {
+          "id":4,
+          "href":"https://www.w3cschool.cn/group/senior/initphp?fcode=index_focusitem",
+          "src":"./statics/images/1621598437368241.png",
+          "alt":"php工程师"
+        },
+      ]
+    };
   },
 };
 </script>
