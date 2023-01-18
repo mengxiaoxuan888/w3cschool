@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <!-- 路由组件出口地方 -->
+    <router-view></router-view>
     <AppList/>  
   </div>
 </template>
