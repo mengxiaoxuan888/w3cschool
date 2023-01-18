@@ -1,13 +1,3088 @@
 <template>
-  <div>我是Search页面</div>
+  <div>
+    <!-- 教程内容页 未登录 -->
+    <div id="full-height-container" class="project-container color-theme-white">
+      <!--控制本地颜色主题样式-->
+
+      <!-- 教程内容页头部 -->
+      <!--header start-->
+      <div id="header" class="header-with-search pro_header">
+        <div id="header_item">
+          <!-- 顶部广告 -->
+          <div id="topbanner" style="display: none">
+            <div class="close-topbox close_top_ad">
+              <i class="i-icon i-icon-close i-icon-close-thin"></i>
+            </div>
+          </div>
+          <!-- 右侧悬浮标广告 -->
+          <div id="rfbanner" style="display: none"></div>
+
+          <div id="header_index">
+            <div id="header-l">
+              <a href="//www.w3cschool.cn" title="w3cschool" class="logo"
+                ><img
+                  src="//7n.w3cschool.cn/statics/images/logonew2.png"
+                  alt="w3cschool"
+              /></a>
+              <ul class="header-menu">
+                <li>
+                  <a href="//www.w3cschool.cn/tutorial" title="编程入门教程"
+                    >编程入门教程</a
+                  >
+                </li>
+                <li>
+                  <a href="//www.w3cschool.cn/courses/" title="编程课程"
+                    >编程课程</a
+                  >
+                </li>
+                <li>
+                  <a href="//www.w3cschool.cn/codecamp/" title="编程实战"
+                    >编程实战</a
+                  >
+                </li>
+                <li>
+                  <a href="//www.w3cschool.cn/exam/" title="编程题库"
+                    >编程题库</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="//123.w3cschool.cn/webtools"
+                    target="_blank"
+                    title="w3cschool在线工具集合"
+                    >在线工具</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="//www.w3cschool.cn/vip?fcode=headermenu"
+                    title="VIP会员"
+                    class="header-menu-vip"
+                    >VIP会员<i class="hot-icon"> 春节福利</i></a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="fr h-right">
+              <div class="fl mobile">
+                <a
+                  class="link"
+                  href="//www.w3cschool.cn/download"
+                  target="_blank"
+                  title="App下载"
+                >
+                  <i class="i-icon i-icon-mobile"></i>App下载
+                </a>
+                <div class="dropdown">
+                  <div class="dropdown-inner">
+                    <div class="text-center dropdown-content">
+                      <div class="qrcode">
+                        <img
+                          src="//7n.w3cschool.cn/statics/images/w3c/app-qrcode2.png"
+                          alt="APP二维码"
+                          width="150"
+                          height="150"
+                        />
+                        <p>扫码下载编程狮APP</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="fl sig-box">
+                <div>
+                  <a class="link" href="//www.w3cschool.cn/register?refer=/"
+                    >注册</a
+                  ><span class="sep">|</span
+                  ><a class="link" href="//www.w3cschool.cn/login?refer=/"
+                    >登录</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="fr searchbox">
+              <form action="/search" target="_self">
+                <input
+                  type="text"
+                  name="w"
+                  class="box"
+                  id="searched_content"
+                  placeholder="输入关键字搜索..."
+                />
+                <button type="submit" class="button"></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="register-Box" id="register-Box" style="display: none">
+        <div class="register-Box-content">
+          <div class="register-Box-top">
+            <span class="register-Box-title">注册成功</span>
+            <span onclick="closeDialogBox(this)" class="feedback-Box-close"
+              >X</span
+            >
+          </div>
+          <div class="register-Box-info">
+            <div class="register-Box-left" style="float: left">
+              <img
+                class="register-cover"
+                src="//atts.w3cschool.cn/attachments/avatar2/avatar_0.jpg"
+              />
+            </div>
+            <div class="register-Box-right">
+              <p class="register-userinfo-title">
+                <i class="usertype-ico-1"></i><span>W3Cschool</span>
+              </p>
+              <p class="register-userinfo-info">恭喜您成为首批注册用户</p>
+              <p class="register-userinfo-info">获得88经验值奖励</p>
+              <button
+                class="search-s"
+                onclick="closeDialogBox(this)"
+                id="registerSubmit"
+              >
+                马上体验
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--header end-->
+
+      <div class="stealth-scroll">
+        <ul class="stealth-scroll-bar">
+          <li class="kr_active">
+            <div class="header-logo">
+              <a href="/" external="">
+                <span class="mobile-logo"></span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <a href="/tutorial" title="编程入门教程" external>入门教程</a>
+          </li>
+          <li>
+            <a href="/learn" title="编程课程" external>编程课程</a>
+          </li>
+          <li>
+            <a href="/vip?fcode=m_indexmenu" title="VIP会员" external
+              >VIP会员<i class="hot-icon"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div id="m-splitter">
+        <div class="m-splitter-left left-container">
+          <div class="fixed-sidebar mscroller" style="width: 100%">
+            <div class="splitter-sidebar">
+              <div class="sidebar-space-info">
+                <a href="/python3" title="Python3 教程">
+                  <div class="sidebar-pro-wrapper">
+                    <div class="sidebar-pro-container">
+                      <div class="sidebar-pro-img">
+                        <span
+                          ><img
+                            class="pimg-cover"
+                            alt="Python3 教程"
+                            src="//atts.w3cschool.cn/attachments/cover/cover_python3.png?t=1666251302?imageView2/1/w/48/h/48"
+                        /></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pro-name-container">
+                    <div class="sidebar-pro-name">
+                      <span>Python3 教程</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-pro-nav">
+                <ul class="page-sidebar-menu">
+                  <li class="pro-m">
+                    <a
+                      class="btn-thumbs-up"
+                      href="javascript:;"
+                      onclick="isProjectLike()"
+                    >
+                      <i class="icon-thumbs-up"></i>
+                      <span id="likestatus">赞</span>
+                    </a>
+                  </li>
+                  <li class="pro-m">
+                    <a
+                      id="hbstar"
+                      href="javascript:;"
+                      onclick="isProjectStar()"
+                      data-type="star"
+                      ><i class="icon-star-empty"></i> <span>收藏</span></a
+                    >
+                  </li>
+                  <!-- <li class="pro-m">
+<a href="javascript:;" title="分享" class="share-btn  popup_more bdsharebuttonbox" data-cmd="more" data-bd-bind="1472196006351"><i class="icon-share"></i> 分享</a>
+</li> -->
+                </ul>
+              </div>
+              <div class="sidebar-menu">
+                <ul>
+                  <li class="nav-item">
+                    <a href="/python3/list/" title="更多文章"
+                      ><i class="icon-bookmark-empty"></i>
+                      <span class="nav-item-label">更多文章</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!--左侧栏导航 start-->
+              <div class="sidebar-nav">
+                <ul class="treeth">
+                  <li
+                    class="active sidebar-nav-tree"
+                    target="sidebar-tree-content"
+                  >
+                    <a href="javascript:;" class="text" title="目录"
+                      ><i class="icon icon-th-list"></i>
+                      <span class="title">目录</span></a
+                    >
+                  </li>
+                  <li class="sidebar-nav-search" target="search-box">
+                    <a href="javascript:;" class="text" title="搜索"
+                      ><i class="icon icon-search"></i>
+                      <span class="title">搜索</span></a
+                    >
+                  </li>
+                  <li class="sidebar-nav-star" target="stars-box">
+                    <a href="javascript:;" class="text" title="书签"
+                      ><i class="icon icon-bookmark"></i>
+                      <span class="title">书签</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!--左侧栏导航 end-->
+              <div style="clear: both"></div>
+              <div class="sidebar-content">
+                <div class="sidebar-tree">
+                  <div class="sidebar-tree-content">
+                    <div
+                      class="dd"
+                      id="nestable_handbook"
+                      data-tid=""
+                      data-id="handbook"
+                    >
+                      <ol class="dd-list">
+                        <li class="dd-item" data-id="python3-l4dz323g">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a
+                              href="/python3/python3-l4dz323g.html"
+                              title="Python3 教程"
+                              >Python3 教程</a
+                            >
+                          </div>
+                          <ol class="dd-list">
+                            <li class="dd-item" data-id="python3-tutorial">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-tutorial.html"
+                                  title="Python3 教程"
+                                  >Python3 教程</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-intro">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-intro.html"
+                                  title="Python3 简介"
+                                  >Python3 简介</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-install">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-install.html"
+                                  title="Python3 安装"
+                                  >Python3 安装</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-use">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-use.html"
+                                  title="Python3 使用上手"
+                                  >Python3 使用上手</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-interpreter">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-interpreter.html"
+                                  title="Python3 解释器"
+                                  >Python3 解释器</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-vscode">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-vscode.html"
+                                  title="Python3 VSCode 配置"
+                                  >Python3 VSCode 配置</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-basic-syntax">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-basic-syntax.html"
+                                  title="Python3 基础语法"
+                                  >Python3 基础语法</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-step1">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-step1.html"
+                                  title="Python3 编程第一步"
+                                  >Python3 编程第一步</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-data-type">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-data-type.html"
+                                  title="Python3 基本数据类型"
+                                  >Python3 基本数据类型</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-comment">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-comment.html"
+                                  title="Python3 注释"
+                                  >Python3 注释</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-basic-operators"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-basic-operators.html"
+                                  title="Python3 运算符"
+                                  >Python3 运算符</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-number">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-number.html"
+                                  title="Python3 数字"
+                                  >Python3 数字</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-sequence">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-sequence.html"
+                                  title="Python3 序列"
+                                  >Python3 序列</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-string">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-string.html"
+                                  title="Python3 字符串"
+                                  >Python3 字符串</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-list">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-list.html"
+                                  title="Python3 列表"
+                                  >Python3 列表</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-tuple">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-tuple.html"
+                                  title="Python3 元组"
+                                  >Python3 元组</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-dictionary">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-dictionary.html"
+                                  title="Python3 字典"
+                                  >Python3 字典</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-set">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-set.html"
+                                  title="Python3 集合"
+                                  >Python3 集合</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-conditional-statements"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-conditional-statements.html"
+                                  title="Python3 条件控制"
+                                  >Python3 条件控制</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-loop">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-loop.html"
+                                  title="Python3 循环"
+                                  >Python3 循环</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-iterator-generator"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-iterator-generator.html"
+                                  title="Python3 迭代器与生成器"
+                                  >Python3 迭代器与生成器</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-function">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-function.html"
+                                  title="Python3 函数"
+                                  >Python3 函数</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-data-structure"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-data-structure.html"
+                                  title="Python3 数据结构"
+                                  >Python3 数据结构</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-module">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-module.html"
+                                  title="Python3 模块"
+                                  >Python3 模块</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-inputoutput">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-inputoutput.html"
+                                  title="Python3 输入和输出"
+                                  >Python3 输入和输出</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-file-methods">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-file-methods.html"
+                                  title="Python3 File 方法"
+                                  >Python3 File 方法</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-os-file-methods"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-os-file-methods.html"
+                                  title="Python3 OS 文件/目录方法"
+                                  >Python3 OS 文件/目录方法</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-errors-execptions"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-errors-execptions.html"
+                                  title="Python3 错误和异常"
+                                  >Python3 错误和异常</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-class">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-class.html"
+                                  title="Python3 面向对象"
+                                  >Python3 面向对象</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-stdlib">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-stdlib.html"
+                                  title="Python3 标准库概览"
+                                  >Python3 标准库概览</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-examples">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-examples.html"
+                                  title="Python3 实例"
+                                  >Python3 实例</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-update">
+                              <div class="dd-content folder-open">
+                                <i class="folder icon-folder-open"></i>
+                                <a title="Python3 历代版本更新"
+                                  >Python3 历代版本更新</a
+                                >
+                              </div>
+                              <ol class="dd-list">
+                                <li class="dd-item" data-id="python3-python310">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="/python3/python3-python310.html"
+                                      title="Python3.10更新"
+                                      >Python3.10更新</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python3-lfy73lto">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="/python3/python3-lfy73lto.html"
+                                      title="Python3.11更新"
+                                      >Python3.11更新</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python-python38">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="/python3/python-python38.html"
+                                      title="python3.9更新"
+                                      >python3.9更新</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                              </ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-thz7323h">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="Python3 高级教程">Python3 高级教程</a>
+                          </div>
+                          <ol class="dd-list">
+                            <li
+                              class="dd-item"
+                              data-id="python3-reg-expressions"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-reg-expressions.html"
+                                  title="Python3 正则表达式"
+                                  >Python3 正则表达式</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-cgi-programming"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-cgi-programming.html"
+                                  title="Python3 CGI 编程"
+                                  >Python3 CGI 编程</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-mysql">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-mysql.html"
+                                  title="Python3 MySQL 数据库连接"
+                                  >Python3 MySQL 数据库连接</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-socket">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-socket.html"
+                                  title="Python3 网络编程"
+                                  >Python3 网络编程</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-smtp">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-smtp.html"
+                                  title="Python3 SMTP发送邮件"
+                                  >Python3 SMTP发送邮件</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-multithreading"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-multithreading.html"
+                                  title="Python3 多线程"
+                                  >Python3 多线程</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-xml-processing"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-xml-processing.html"
+                                  title="Python3 XML解析"
+                                  >Python3 XML解析</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-json">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-json.html"
+                                  title="Python3 JSON 数据解析"
+                                  >Python3 JSON 数据解析</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-date-time">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-date-time.html"
+                                  title="Python3 日期和时间"
+                                  >Python3 日期和时间</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li
+                              class="dd-item"
+                              data-id="python3-built-in-functions"
+                            >
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-built-in-functions.html"
+                                  title="Python3 内置函数"
+                                  >Python3 内置函数</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-itn2323i">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/python3/python3-u6ij2pw3.html"
+                                  title="Python3 爬虫实战教程"
+                                  >Python3 爬虫实战教程</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-o4k7323j">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/python3/python3-eam72ylh.html"
+                                  title="Python3 深度/机器学习类"
+                                  >Python3 深度/机器学习类</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-dbvf323k">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/python3/python3-ngwk2zg8.html
+    
+
+
+    
+"
+                                  title="Python3 制作小游戏"
+                                  >Python3 制作小游戏</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-v7hz3osl">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="Python 技术专题">Python 技术专题</a>
+                          </div>
+                          <ol class="dd-list">
+                            <li class="dd-item" data-id="python3-mxvb3osm">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-mxvb3osm.html"
+                                  title="python 解决pip下载缓慢的方法"
+                                  >python 解决pip下载缓慢的方法</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-rsxk3oso">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-rsxk3oso.html"
+                                  title="python 怎么使用pip进行包管理"
+                                  >python 怎么使用pip进行包管理</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-ev7r3e1q">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="相关教程">相关教程</a>
+                          </div>
+                          <ol class="dd-list">
+                            <li class="dd-item" data-id="python3-7dgf3e1s">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/python/"
+                                  title="Python2 教程"
+                                  >Python2 教程</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-g2cf3e1m">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="精品网课推荐">精品网课推荐</a>
+                          </div>
+                          <ol class="dd-list">
+                            <li class="dd-item" data-id="python3-m3xq3e1n">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/minicourse/play/python3course"
+                                  title="Python3 入门"
+                                  >Python3 入门</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-b7qn3e1p">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/minicourse/play/python2_txy"
+                                  title="Python 基础入门"
+                                  >Python 基础入门</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-3ngx3e1o">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/minicourse/play/pythonhigh"
+                                  title="Python3 进阶"
+                                  >Python3 进阶</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-g1ma3fhq">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="Python基础教程">Python基础教程</a>
+                          </div>
+                          <ol class="dd-list">
+                            <li class="dd-item" data-id="python3-w2z33pu5">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/pythonclass/"
+                                  title="Python基础教程"
+                                  >Python基础教程</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-mbjd3khq">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="Python 更多内容">Python 更多内容</a>
+                          </div>
+                          <ol class="dd-list">
+                            <li class="dd-item" data-id="python3-fcwz3khr">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-fcwz3khr.html"
+                                  title="Python 备忘单"
+                                  >Python 备忘单</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-76kb3oyc">
+                          <div class="dd-content folder-open">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="python第三方库">python第三方库</a>
+                          </div>
+                          <ol class="dd-list">
+                            <li class="dd-item" data-id="python3-xkgz3oyd">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/requests2/
+
+
+
+    
+"
+                                  title="request 教程-python的http库"
+                                  >request 教程-python的http库</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-excel">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="/python3/python3-excel.html"
+                                  title="Python3 操作excel库总结"
+                                  >Python3 操作excel库总结</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-y7h23pf4">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/httpx/"
+                                  title="httpx教程-用于python的下一代http库"
+                                  >httpx教程-用于python的下一代http库</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-qs373pf5">
+                              <div class="dd-content folder-open">
+                                <i class="folder icon-folder-open"></i>
+                                <a title="web相关">web相关</a>
+                              </div>
+                              <ol class="dd-list">
+                                <li class="dd-item" data-id="python3-imbv3p1n">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="https://www.w3cschool.cn/minicourse/play/pyflask
+
+    
+"
+                                      title="flask微课-python轻量web框架"
+                                      >flask微课-python轻量web框架</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python3-4onb3p1o">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="https://www.w3cschool.cn/flask/
+
+
+    
+"
+                                      title="flask教程 -python轻量web框架"
+                                      >flask教程 -python轻量web框架</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python3-jcly3p28">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="https://www.w3cschool.cn/django4/"
+                                      title="Django教程-python web框架"
+                                      >Django教程-python web框架</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python3-utpl3qtr">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="Python Tornado教程_w3cschool"
+                                      title="Tornado教程 - 高性能的web框架"
+                                      >Tornado教程 - 高性能的web框架</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                              </ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-vyk73pf6">
+                              <div class="dd-content folder-open">
+                                <i class="folder icon-folder-open"></i>
+                                <a title="数据分析相关">数据分析相关</a>
+                              </div>
+                              <ol class="dd-list">
+                                <li class="dd-item" data-id="python3-qtew3p7o">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="https://www.w3cschool.cn/pandas/"
+                                      title="pandas教程-python数据分析库"
+                                      >pandas教程-python数据分析库</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python3-zv9n3p1y">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="https://www.w3cschool.cn/numpy_ln/"
+                                      title="numpy教程 -python数据科学库"
+                                      >numpy教程 -python数据科学库</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python-xlwt">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="/python3/python-xlwt.html"
+                                      title="Python3 xlwt库基本教程"
+                                      >Python3 xlwt库基本教程</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                                <li class="dd-item" data-id="python3-ey533p27">
+                                  <div class="dd-content">
+                                    <i class="ic-folder-open2"></i>
+                                    <a
+                                      href="https://www.w3cschool.cn/matplotlib/"
+                                      title="matplotlib教程 - python制表库"
+                                      >matplotlib教程 - python制表库</a
+                                    >
+                                  </div>
+                                  <ol class="dd-list"></ol>
+                                </li>
+                              </ol>
+                            </li>
+                            <li class="dd-item" data-id="python3-isod3po9">
+                              <div class="dd-content">
+                                <i class="ic-folder-open2"></i>
+                                <a
+                                  href="https://www.w3cschool.cn/pillow/"
+                                  title="pillow教程-python操作图像库"
+                                  >pillow教程-python操作图像库</a
+                                >
+                              </div>
+                              <ol class="dd-list"></ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li class="dd-item" data-id="python3-fzew3pf1">
+                          <div class="dd-content">
+                            <i class="folder icon-folder-open"></i>
+                            <a title="python内置库">python内置库</a>
+                          </div>
+                          <ol class="dd-list"></ol>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                  <!--  sidebar-tree-content end  -->
+                  <div class="search-box hide1">
+                    <div id="knsearch" class="tab-pane">
+                      <div class="knsearch-input">
+                        <input
+                          type="text"
+                          placeholder="搜索手册内容"
+                          name="w"
+                          class="input-s"
+                        />
+                        <button class="knsearchbtn">搜索</button>
+                        <!--<button class="kncleanbtn">清空</button>-->
+                      </div>
+                      <div class="searchres"></div>
+                      <div class="sidebar-tree-dict"></div>
+                    </div>
+                  </div>
+                  <div class="stars-box hide1">
+                    <div id="kncollect" class="tab-pane">
+                      <ul class="dd-list">
+                        <li class="nostar"></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="space-tools-section">
+<div class="tools-button">
+<a href="" class="expand-collapse-trigger"></a>
+</div>
+</div> -->
+          </div>
+        </div>
+        <div class="splitter-handle left-drager">
+          <div class="left-dragger-c splitter-handle-highlight"></div>
+        </div>
+        <div id="pro-mian" class="main-container font0">
+          <!-- 教程封面页 -->
+          <div class="portlet-title pro-title">
+            <div class="group-wrap">
+              <div class="set-btn-group font-settings pull-left">
+                <a href="#" class="expand-collapse-trigger" title="折叠/展开"
+                  ><i class="icon-th-list"></i
+                ></a>
+                <a href="#" class="toggle-dropdown-size" title="字体大小设置"
+                  ><i class="icon-font"></i
+                ></a>
+                <a href="#" class="toggle-dropdown-background" title="夜间模式"
+                  ><i
+                    class="w3c-icon w3c-icon-night"
+                    style="display: contents"
+                  ></i
+                ></a>
+                <!-- 视觉主题字体大小设置 -->
+                <div
+                  class="set-dropdown-menu set-size docblur"
+                  style="display: none"
+                >
+                  <div class="dropdown-caret">
+                    <span class="caret-outer"></span>
+                    <span class="caret-inner"></span>
+                  </div>
+                  <div class="buttons font-opt">
+                    <button
+                      class="button size font-reduce"
+                      font="reduce"
+                      title="缩小字体"
+                    >
+                      A
+                    </button>
+                    <button
+                      class="button size font-enlarge"
+                      font="enlarge"
+                      title="放大字体"
+                    >
+                      A
+                    </button>
+                  </div>
+                </div>
+                <!-- 视觉主题背景颜色设置 -->
+                <div class="set-dropdown-menu set-background docblur">
+                  <div class="dropdown-caret">
+                    <span class="caret-outer"></span>
+                    <span class="caret-inner"></span>
+                  </div>
+                  <div class="buttons bg-color">
+                    <button
+                      class="button theme background-day"
+                      color="color-theme-white"
+                      title="默认模式"
+                    >
+                      默认
+                    </button>
+                    <button
+                      class="button theme background-night"
+                      color="color-theme-night"
+                      title="夜间模式"
+                    >
+                      夜间
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-cover">
+            <div id="pcover">
+              <div class="portlet">
+                <div class="coverimg">
+                  <a href="//www.w3cschool.cn/python3" title="Python3 教程">
+                    <img
+                      class="pimgcover"
+                      src="//atts.w3cschool.cn/attachments/cover/cover_python3.png?t=1666251302&imageView2/1/w/150/h/84"
+                      alt="Python3 教程"
+                    />
+                  </a>
+                </div>
+                <div class="coverinfo">
+                  <h1>Python3 教程</h1>
+                  <!-- <div class="creatorarea">
+<a href="javascript:;" target="_blank">
+<img class="pavatar" src="https://7n.w3cschool.cn/attachments/avatar2/avatar_22413.jpg" /> 
+rowline</a>
+</div> -->
+                  <br />
+                  <div class="coverinfo-desc">
+                    <div class="content-btn-group cover-btn-group">
+                      <span
+                        id="content-head-viewcount"
+                        class="content-head-viewcount"
+                        ><i class="icon-eye-open"></i>
+                        <span>阅读(5546.6k)</span></span
+                      >
+                      <a
+                        class="hbstar"
+                        href="javascript:;"
+                        onclick="isProjectStar()"
+                        data-type="star"
+                        ><i class="icon-star"></i> <span>收藏</span></a
+                      >
+                      <a
+                        class="btn-thumbs-up"
+                        href="javascript:;"
+                        onclick="isProjectLike()"
+                        ><i class="icon-thumbs-up"></i>
+                        <span id="likestatus">赞</span>(<span id="likecount"
+                          >709</span
+                        >)</a
+                      >
+                      <a
+                        href="javascript:;"
+                        title="分享"
+                        class="share-btn popup_more bdsharebuttonbox"
+                        data-cmd="more"
+                        ><i class="icon-share"></i> 分享</a
+                      >
+                      <!-- <a title="请将此链接拖拽到书签栏" class="pagecollect" onclick="alert('请将此链接拖拽到书签栏')" href="javascript:(function(){CLIP_HOST='//www.w3cschool.cn/statics/js/w3cdoc.min.js';%20try{var%20x=document.createElement('SCRIPT');%20x.type='text/javascript';%20x.src=CLIP_HOST+'?'+(new%20Date().getTime()/100000);%20x.charset='utf-8';document.getElementsByTagName('head')[0].appendChild(x);%20}catch(e){alert(e);}%20})();" id="add-btn"><i class="icon-cut"></i> 网页剪辑器</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-desc content-intro">
+                <h4><i class="icon-reorder"></i>手册简介</h4>
+                <p>Python3.x版本，未来主流的版本。</p>
+              </div>
+              <div class="project-desc content-intro">
+                <h4 class="project-desc-title">
+                  <i class="icon-reorder"></i>手册说明
+                </h4>
+                <div class="project-desc-content">
+                  <p style="text-align: center">
+                    <img
+                      src="https://www.w3cschool.cn/attachments/image/20161031/1477907822466420.png"
+                    />
+                    <br />
+                  </p>
+                  <p>
+                    Python（英国发音：/ˈpaɪθən/ 美国发音：/ˈpaɪθɑːn/）,
+                    是一种面向对象的解释型计算机程序设计语言，由荷兰人Guido van
+                    Rossum于1989年发明，第一个公开发行版发行于1991年。
+                    <br />
+                  </p>
+                  <p>
+                    如果您想要更快、更系统地学会Python，您最好采用边学边练（<a
+                      href="https://www.w3cschool.cn/minicourse/play/python3course?cp=380"
+                      target="_blank"
+                      ><b>Python微课</b></a
+                    >）的学习模式。
+                    <br />
+                  </p>
+                  <p>
+                    如果您觉得Python的学习难度较高，不易理解，建议您采用视频教程进行学习：<b
+                      ><a
+                        href="https://www.w3cschool.cn/minicourse/play/python_rygh"
+                        target="_blank"
+                        >Python视频课程</a
+                      ></b
+                    >&nbsp;
+                  </p>
+                  <p>
+                    <br />
+                  </p>
+                </div>
+              </div>
+              <!-- 推荐课程 -->
+              <div class="project-desc2 clearfix">
+                <h4><i class="icon-reorder"></i>更新记录</h4>
+                <ul class="portlet-body logbody">
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a href="/python3/python3-intro.html" title="Python3 简介"
+                        >Python3 简介</a
+                      >
+                      <span class="logtime">12-31 20:05</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python3-install.html"
+                        title="Python3 安装"
+                        >Python3 安装</a
+                      >
+                      <span class="logtime">10-27 16:28</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python3-built-in-functions.html"
+                        title="Python3 内置函数"
+                        >Python3 内置函数</a
+                      >
+                      <span class="logtime">10-26 09:42</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python-python38.html"
+                        title="python3.9更新"
+                        >python3.9更新</a
+                      >
+                      <span class="logtime">10-26 09:42</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a href="/python3/python3-tuple.html" title="Python3 元组"
+                        >Python3 元组</a
+                      >
+                      <span class="logtime">10-26 09:34</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python3-number.html"
+                        title="Python3 数字"
+                        >Python3 数字</a
+                      >
+                      <span class="logtime">10-26 09:33</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python3-sequence.html"
+                        title="Python3 序列"
+                        >Python3 序列</a
+                      >
+                      <span class="logtime">10-26 09:26</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python3-reg-expressions.html"
+                        title="Python3 正则表达式"
+                        >Python3 正则表达式</a
+                      >
+                      <span class="logtime">09-17 17:10</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python3-basic-operators.html"
+                        title="Python3 运算符"
+                        >Python3 运算符</a
+                      >
+                      <span class="logtime">09-05 09:14</span>
+                    </div>
+                  </li>
+                  <li class="logrow">
+                    <div class="loginfo">
+                      <a
+                        href="/python3/python3-tutorial.html"
+                        title="Python3 教程"
+                        >Python3 教程</a
+                      >
+                      <span class="logtime">07-28 10:23</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="project-desc2">
+                <h4><i class="icon-reorder"></i>多端阅读</h4>
+                <ul class="service-card">
+                  <li class="card-list">
+                    <a
+                      href="//www.w3cschool.cn/download/python3.html#downloadpc"
+                      target="_blank"
+                      title="下载Python3 教程离线版"
+                      class="card-list-link"
+                    >
+                      <div class="card-list-icon">
+                        <i class="i-icon i-icon iconpc"></i>
+                      </div>
+                      <div class="card-list-title">
+                        在PC/MAC上查看《Python3 教程》
+                      </div>
+                      <div class="card-list-desc">
+                        <span class="highlight-text"
+                          >下载Python3 教程离线版客户端</span
+                        >，进入客户端后通过搜索当前教程手册的名称并下载，就可查看当前离线教程文档。
+                      </div>
+                    </a>
+                  </li>
+                  <li class="card-list">
+                    <a
+                      href="//m.w3cschool.cn/python3/"
+                      target="_blank"
+                      title="Python3 教程 移动端阅读"
+                      class="card-list-link"
+                    >
+                      <div class="card-list-icon">
+                        <i class="i-icon i-icon-device-pad"></i>
+                      </div>
+                      <div class="card-list-title">
+                        在手机上查看《Python3 教程》
+                      </div>
+                      <div class="card-list-desc">
+                        点击链接
+                        <span class="highlight-text"
+                          >https://m.w3cschool.cn/python3/</span
+                        >
+                        就可直接查看当前离线教程文档。
+                      </div>
+                    </a>
+                  </li>
+                  <li class="card-list">
+                    <a
+                      href="//www.w3cschool.cn/download/#downloadapp"
+                      target="_blank"
+                      title="下载w3cschool手机版"
+                      class="card-list-link"
+                    >
+                      <div class="card-list-icon">
+                        <i class="i-icon i-icon-device-mobile"></i>
+                      </div>
+                      <div class="card-list-title">
+                        在手机APP上查看《Python3 教程》
+                      </div>
+                      <div class="card-list-desc">
+                        <span class="highlight-text"
+                          >下载w3cschool手机App端</span
+                        >，请从各大安卓应用商店、苹果App
+                        Store搜索并下载w3cschool手机客户端，在App中搜索当前教程手册的名称查看。
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="project-cover-footer">
+                <p>返回<a href="//www.w3cschool.cn/">w3cschool</a>官网主页</p>
+              </div>
+            </div>
+            <div class="right-item">
+              <div class="sidebar-box tools-box">
+                <div id="course">
+                  <h2>扩展栏目</h2>
+                </div>
+                <div id="tools">
+                  <h5 id="tools_3">
+                    <a
+                      href="/python/index.html"
+                      target="_blank"
+                      title="Python教程"
+                      >Python教程</a
+                    >
+                  </h5>
+                  <h5 id="tools_1"><a href="/webide">开发工具IDE</a></h5>
+                  <h5 id="tools_3"><a href="/codecamp/">编程训练营</a></h5>
+                  <h5 id="tools_1"><a href="/python3/list/">Wiki列表</a></h5>
+                </div>
+              </div>
+              <!--竖版广告放置-->
+              <div class="abox-item">
+                <div class="sidebar-box">
+                  <div class="abox">
+                    <a
+                      href="https://www.w3cschool.cn/minicourse/play/python3course?"
+                      target="_blank"
+                      ><img
+                        src="./images/1556162304623142.png"
+                        alt="python3微课"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <!--分类导航-->
+              <!--siderbar_nav start-->
+              <div class="sidebar-box">
+                <div id="course">
+                  <h2>分类导航</h2>
+                </div>
+                <ul class="nav1">
+                  <li class="li1">
+                    <a href="javascript:;">最新推荐</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/freejquery/index.html"
+                          title="免费Jquery插件合集"
+                          >免费Jquery插件合集</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/plk2fi/index.html"
+                          title="前端学习资源汇总"
+                          >前端学习资源汇总</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/wxxcx/index.html"
+                          title="微信小程序资源汇总"
+                          >微信小程序资源汇总</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/smarty/index.html"
+                          title="Smarty教程"
+                          >Smarty教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/kfm2f1/index.html"
+                          title="SEO基础知识教程"
+                          >SEO基础知识教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/wkspring/index.html"
+                          title="Spring 教程"
+                          >Spring 教程</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">HTML/CSS</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/html/index.html"
+                          title="HTML教程"
+                          >HTML教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/html5/index.html"
+                          title="HTML5教程"
+                          >HTML5教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/css/index.html"
+                          title="CSS教程"
+                          >CSS教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/css3/index.html"
+                          title="CSS3教程"
+                          >CSS3教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/bootstrap/index.html"
+                          title="Bootstrap教程"
+                          >Bootstrap教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/foundation/index.html"
+                          title="Foundation5 教程"
+                          >Foundation5 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/htmltags/index.html"
+                          title="HTML参考手册"
+                          >HTML参考手册</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/cssref/index.html"
+                          title="CSS参考手册"
+                          >CSS参考手册</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">JavaScript</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/javascript/index.html"
+                          title="JavaScript教程"
+                          >JavaScript教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/jquery/index.html"
+                          title="jQuery教程"
+                          >jQuery教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/jsref/index.html"
+                          title="JavaScript 和 HTML DOM 参考手册"
+                          >JavaScript 和 HTML DOM 参考手册</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/nodejs/index.html"
+                          title="Node.js教程"
+                          >Node.js教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/aekdgs/index.html"
+                          title="Vue 手册"
+                          >学习 Vue</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/react/index.html"
+                          title="React 教程"
+                          >React 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/angularjs/index.html"
+                          title="AngularJS教程"
+                          >AngularJS教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/typescript/index.html"
+                          title="TypeScript 教程"
+                          >TypeScript 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/json/index.html"
+                          title="JSON教程"
+                          >JSON教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/ajax/index.html"
+                          title="AJAX教程"
+                          >AJAX教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/ecmascript/index.html"
+                          title="ECMAScript教程"
+                          >ECMAScript教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/angular2/index.html"
+                          title="Angular2教程"
+                          >Angular2教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/jqueryui/index.html"
+                          title="jQuery UI教程"
+                          >jQuery UI教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/jqueryeasyui/index.html"
+                          title="jQuery EasyUI教程"
+                          >jQuery EasyUI教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/extjs/index.html"
+                          title="Extjs 教程"
+                          >Extjs 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/emberjs_guide/index.html"
+                          title="Ember.js参考文档"
+                          >Ember.js参考文档</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/htmldom/index.html"
+                          title="HTML DOM教程"
+                          >HTML DOM教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/coffeescript/index.html"
+                          title="CoffeeScript教程"
+                          >CoffeeScript教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/highcharts/index.html"
+                          title="Highcharts教程"
+                          >Highcharts教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/discovermeteor/index.html"
+                          title="Meteor 教程"
+                          >Meteor 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/vuejs/index.html"
+                          title="Vue.js 教程"
+                          >Vue.js 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/vuejs2/index.html"
+                          title="Vue.js 2.0 教程"
+                          >Vue.js 2.0 教程</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">后端语言</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/python/index.html"
+                          title="Python基础教程"
+                          >Python基础教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/python3/index.html"
+                          title="Python 3教程"
+                          >Python 3教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/java/index.html"
+                          title="Java教程"
+                          >Java教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/nodejs/index.html"
+                          title="Node.js教程"
+                          >Node.js教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/php/index.html"
+                          title="PHP教程"
+                          >PHP教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a href="//www.w3cschool.cn/c/index.html" title="C教程"
+                          >C教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/cpp/index.html"
+                          title="C++教程"
+                          >C++教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/csharp/index.html"
+                          title="C#教程"
+                          >C#教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/go/index.html"
+                          title="Go教程"
+                          >Go教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/r/index.html"
+                          title="R语言教程"
+                          >R语言教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/ruby/index.html"
+                          title="Ruby教程"
+                          >Ruby教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/jsp/index.html"
+                          title="JSP教程"
+                          >JSP教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/lua/index.html"
+                          title="Lua教程"
+                          >Lua教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/aspnet/index.html"
+                          title="ASP.NET教程"
+                          >ASP.NET教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/vbscript/index.html"
+                          title="VBScript教程"
+                          >VBScript教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/vb_net/index.html"
+                          title="vb.net教程"
+                          >vb.net教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/perl/index.html"
+                          title="Perl 教程"
+                          >Perl 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/erlang/index.html"
+                          title="Erlang 教程"
+                          >Erlang 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/scala/index.html"
+                          title="Scala教程"
+                          >Scala教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/julia/index.html"
+                          title="Julia教程"
+                          >Julia教程</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">开发框架</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/django/index.html"
+                          title="Django教程"
+                          >Django教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/jfinal/index.html"
+                          title="JFinal教程手册"
+                          >JFinal教程手册</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/swoole/index.html"
+                          title="Swoole 教程"
+                          >Swoole 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/groovy/index.html"
+                          title="Groovy教程"
+                          >Groovy教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/wkspring/index.html"
+                          title="Spring 教程"
+                          >Spring 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/servlet/index.html"
+                          title="Servlet教程"
+                          >Servlet教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/struts_2/index.html"
+                          title="Struts2教程"
+                          >Struts2教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/junit/index.html"
+                          title="jUnit教程"
+                          >jUnit教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/revel/index.html"
+                          title="Revel教程"
+                          >Revel教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/swing/index.html"
+                          title="SWING 教程"
+                          >SWING 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/wordpress/index.html"
+                          title="WordPress教程"
+                          >WordPress教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/arduino/index.html"
+                          title="Arduino教程"
+                          >Arduino教程</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">数据库</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/sql/index.html"
+                          title="SQL教程"
+                          >SQL教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/mysql/index.html"
+                          title="MySQL 教程"
+                          >MySQL 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/mariadb/index.html"
+                          title="MariaDB教程"
+                          >MariaDB教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/mybatis/index.html"
+                          title="MyBatis 教程"
+                          >MyBatis 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/sqlite/index.html"
+                          title="SQLite教程"
+                          >SQLite教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/ms_access/index.html"
+                          title="MS Access教程"
+                          >MS Access教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/mongodb/index.html"
+                          title="MongoDB教程"
+                          >MongoDB教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/redis/index.html"
+                          title="Redis教程"
+                          >Redis教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/memcached/index.html"
+                          title="Memcached教程"
+                          >Memcached教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/hibernate/index.html"
+                          title="Hibernate 教程"
+                          >Hibernate 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/storm/index.html"
+                          title="Storm 入门教程"
+                          >Storm 入门教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/cassandra/index.html"
+                          title="Cassandra教程"
+                          >Cassandra教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/slickguide/index.html"
+                          title="Slick 教程"
+                          >Slick 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/spark/index.html"
+                          title="Spark 编程指南"
+                          >Spark 编程指南</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">移动开发</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/android/index.html"
+                          title="Android 教程"
+                          >Android 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/android_sdk/index.html"
+                          title="Android SDK上手指南"
+                          >Android SDK上手指南</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/weixinapp/index.html"
+                          title="微信小程序开发文档"
+                          >微信小程序开发文档</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/jquerymobile/index.html"
+                          title="jQuery Mobile教程"
+                          >jQuery Mobile教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/ios/index.html"
+                          title="iOS开发手册"
+                          >iOS开发手册</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/swift/index.html"
+                          title="Swift 教程"
+                          >Swift 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/cordova/index.html"
+                          title="Cordova教程"
+                          >Cordova教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/crossapp/index.html"
+                          title="CrossApp教程"
+                          >CrossApp教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/react/index.html"
+                          title="React 教程"
+                          >React 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/ionic/index.html"
+                          title="ionic 教程"
+                          >ionic 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/homekit/index.html"
+                          title="HomeKit App 的开发指南"
+                          >HomeKit App 的开发指南</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">服务器相关</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/linux/index.html"
+                          title="Linux教程"
+                          >Linux教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/docker/index.html"
+                          title="Docker教程"
+                          >Docker教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/reqsgr/index.html"
+                          title="Docker从入门到实践"
+                          >Docker从入门到实践</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/dosmlxxsc1/index.html"
+                          title="DOS命令学习手册"
+                          >DOS命令学习手册</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/unix/index.html"
+                          title="UNIX 入门指南"
+                          >UNIX 入门指南</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/nginx/index.html"
+                          title="Nginx 入门指南"
+                          >Nginx 入门指南</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/shellbook/index.html"
+                          title="Shell 编程范例"
+                          >Shell 编程范例</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/oauth2/index.html"
+                          title="OAuth 2.0系列教程"
+                          >OAuth 2.0系列教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/webservices/index.html"
+                          title="Web Services教程"
+                          >Web Services教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/dartstyleguide/index.html"
+                          title="Dart 编码风格指南"
+                          >Dart 编码风格指南</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/rdf/index.html"
+                          title="RDF教程"
+                          >RDF教程</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">开发工具</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/eclipse/index.html"
+                          title="Eclipse教程"
+                          >Eclipse教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/git/index.html"
+                          title="Git教程"
+                          >Git教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/ant/index.html"
+                          title="Apache Ant 教程"
+                          >Apache Ant 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/atom/index.html"
+                          title="Atom教程"
+                          >Atom教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/sublimetext/index.html"
+                          title="Sublime Text 使用手册"
+                          >Sublime Text 使用手册</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/vim/index.html"
+                          title="Vim 教程"
+                          >Vim 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/svn/index.html"
+                          title="SVN 教程"
+                          >SVN 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/firebug/index.html"
+                          title="Firebug教程"
+                          >Firebug教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/composer/index.html"
+                          title="Composer 教程"
+                          >Composer 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/codesmith/index.html"
+                          title="CodeSmith教程"
+                          >CodeSmith教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/electronmanual/index.html"
+                          title="Electron 中文文档"
+                          >Electron 中文文档</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/flex/index.html"
+                          title="Flex教程"
+                          >Flex教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/gradle/index.html"
+                          title="Gradle教程"
+                          >Gradle教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/grunt/index.html"
+                          title="Grunt 教程"
+                          >Grunt 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/bhz24q/index.html"
+                          title="HBuilder 使用教程"
+                          >HBuilder 使用教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/maven/index.html"
+                          title="Maven 教程"
+                          >Maven 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/tableau/index.html"
+                          title="Tableau教程"
+                          >Tableau教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/chromedevtools/index.html"
+                          title="Chrome 开发工具指南"
+                          >Chrome 开发工具指南</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li1">
+                    <a href="javascript:;">大数据</a>
+                    <ul class="nav2">
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/apache_pig/index.html"
+                          title="Apache Pig教程"
+                          >Apache Pig教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/apache_kafka/index.html"
+                          title="Apache Kafka 教程"
+                          >Apache Kafka 教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/apache_storm/index.html"
+                          title="Apache Storm教程"
+                          >Apache Storm教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/hadoop/index.html"
+                          title="Hadoop教程"
+                          >Hadoop教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/impala/index.html"
+                          title="impala教程"
+                          >impala教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/zookeeper/index.html"
+                          title="Zookeeper教程"
+                          >Zookeeper教程</a
+                        >
+                      </li>
+                      <li class="li2">
+                        <a
+                          href="//www.w3cschool.cn/sas/index.html"
+                          title="SAS教程"
+                          >SAS教程</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!--siderbar_nav end-->
+            </div>
+          </div>
+        </div>
+        <div id="pro-footer">
+          <div class="s-footer">
+            <div class="s-footer-bottom">
+              <p>
+                Copyright&copy;2021&nbsp;<a
+                  href="//www.w3cschool.cn"
+                  target="_blank"
+                  title="w3cschool"
+                  >w3cschool</a
+                >编程狮<span>|</span
+                ><a
+                  href="https://beian.miit.gov.cn/"
+                  target="_blank"
+                  rel="nofollow"
+                  class="footer-record"
+                  >闽ICP备15016281号-3</a
+                ><span>|</span
+                ><a
+                  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020302033924"
+                  target="_blank"
+                  rel="nofollow"
+                  ><i class="beian"></i>闽公网安备35020302033924号</a
+                >
+              </p>
+              <p>
+                违法和不良信息举报电话：173-0602-2364<span>|</span
+                ><a href="mailto:jubao@eeedong.com"
+                  >举报邮箱：jubao@eeedong.com</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 侧边小部件 -->
+    <div class="side-widget">
+      <div class="side-widget-container side-widget-flexible">
+        <div class="side-widget-flexible-inner">
+          <div class="side-widget-item onlinenote" data-module="page">
+            <div class="widget-icon"></div>
+            <div>在线笔记</div>
+          </div>
+          <div class="side-widget-item app">
+            <div class="widget-icon"></div>
+            <div>App下载</div>
+            <div class="widget-popover">
+              <div class="widget-popover-inner">
+                <div class="img">
+                  <img
+                    src="//7n.w3cschool.cn/statics/images/w3c/app-qrcode2.png"
+                    alt="App下载"
+                    width="140"
+                    height="140"
+                  />
+                </div>
+                <p>扫描二维码</p>
+                <p>下载编程狮App</p>
+              </div>
+            </div>
+          </div>
+          <div class="side-widget-item wechat">
+            <div class="widget-icon"></div>
+            <div>公众号</div>
+            <div class="widget-popover">
+              <div class="widget-popover-inner">
+                <div class="img">
+                  <img
+                    src="//7n.w3cschool.cn/statics/images/w3c/mp-qrcode.png"
+                    alt="微信公众号"
+                    width="140"
+                    height="140"
+                  />
+                </div>
+                <p>编程狮公众号</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="side-widget-item feedback"
+            data-module="page"
+            onclick="showDialogBox(this)"
+          >
+            <div class="widget-icon"></div>
+            <div>意见反馈</div>
+          </div>
+          <div class="side-widget-item side-widget-flexible-triger up">
+            <div class="widget-icon"></div>
+          </div>
+        </div>
+      </div>
+      <div class="side-widget-container">
+        <div class="side-widget-item backtop" data-visibility="50">
+          <div class="widget-icon"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-Box" style="display: none">
+      <div class="feedback-Box-content" style="width: 800px">
+        <div class="feedback-Box-top">
+          <span class="feedback-Box-title">意见反馈</span>
+          <span onclick="closeDialogBox(this)" class="feedback-Box-close"
+            >X</span
+          >
+        </div>
+        <ul>
+          <li class="feedback-box">
+            <div
+              id="feedbackRadio"
+              type="radio"
+              name="feedbackType"
+              data-value="0"
+              style=""
+            >
+              意见反馈：
+            </div>
+            <textarea
+              name="reportInfo"
+              id="elmaaa"
+              class="feedback-text"
+              rows="15"
+              placeholder="请留下您宝贵的意见反馈吧。"
+              style="width: 700px; height: 200px; overflow: auto"
+            ></textarea>
+            <p>联系方式：</p>
+            <input
+              type="text"
+              placeholder="留个联系方式呗..."
+              name="reportAddress"
+              class="radio-text"
+              id="reportAddress"
+              style="height: 30px; width: 200px"
+            />
+          </li>
+        </ul>
+        <button class="search-s" onclick="dialogSubmit(this)" id="reportSubmit">
+          提交
+        </button>
+      </div>
+    </div>
+
+    <div id="note-start" style="display: none"></div>
+
+    <div id="detail" style="display: none">
+      <div id="note-Dialog" class="note-Dialog">
+        <div class="note-Box-content">
+          <div class="ntitlebox">
+            <input
+              type="text"
+              placeholder=""
+              name="ntitle"
+              class="ntitle"
+              id="ntitle"
+            />
+          </div>
+          <div id="editorarea">
+            <textarea
+              name="ncontent"
+              id="ncontent"
+              class="ncontent"
+              rows="15"
+              placeholder=""
+              style="width: 700px; height: 200px; overflow: auto"
+            ></textarea>
+          </div>
+          <p></p>
+          <a class="closenote" href="/my/note" target="_blank"
+            >查看完整版笔记</a
+          >
+          <button class="notesubmit" id="notesubmit">保存</button>
+          <button class="notebtn pull-right closenote" style="margin: 20px 0">
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="feedback-btn feedback-btn-gray"
+      style="display: inline-block"
+    >
+      教程纠错
+    </button>
+    <button class="feedback-btn feedback-btn-gray" style="display: none">
+      教程纠错
+    </button>
+
+    <div class="report-Box" style="display: none">
+      <div class="report-Box-content">
+        <div class="report-Box-top">
+          <span class="report-Box-title">违规举报</span>
+          <span onclick="closeReportBox(this)" class="report-Box-close">X</span>
+        </div>
+        <ul>
+          <li class="radio-box">
+            <input
+              id="reportRadio"
+              type="radio"
+              name="reportType"
+              value="1"
+              checked="checked"
+            />
+            广告等垃圾信息
+          </li>
+          <li class="radio-box">
+            <input id="reportRadio" type="radio" name="reportType" value="2" />
+            不友善内容
+          </li>
+          <li class="radio-box">
+            <input id="reportRadio" type="radio" name="reportType" value="3" />
+            违反法律法规的内容
+          </li>
+          <li class="radio-box">
+            <input id="reportRadio" type="radio" name="reportType" value="4" />
+            不宜公开讨论的政治内容
+          </li>
+          <li class="radio-box" onclick="reportOther(this)">
+            <input id="reportRadio" type="radio" name="reportType" value="0" />
+            其他
+            <input
+              type="text"
+              class="radio-text"
+              name="reportInfo"
+              value=""
+              placeholder="请填写您的举报理由。"
+            />
+          </li>
+        </ul>
+        <button class="search-s" onclick="reportSubmit(this)" id="reportSubmit">
+          提交
+        </button>
+      </div>
+    </div>
+    <div class="widget-body" data-type="project"></div>
+    <div class="pay-area" data-static="//appapi.w3cschool.cn/statics"></div>
+    <div class="dialog-area"></div>
+
+    <div id="tryframebox" class="tryframebox" style="display: none">
+      <div class="tryframebox-inner">
+        <iframe
+          id="tryframe"
+          class="tryframebox"
+          name="tryframe"
+          width="100%"
+          height="100%"
+          style="border: none"
+        ></iframe>
+        <span class="closeifream" style="font-size: 30px"
+          ><i class="i-icon i-icon-close-circle" width="20px" height="20px"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- 图片放大根元素，必须有类 pswp -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- 背景 -->
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <!-- 幻灯片容器，在DOM中保留其中3个以节省内存，不要修改 -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
+
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:"Search"
-}
+  name: "Search",
+};
 </script>
 
-<style>
+<style scoped>
+.note-list-title {
+  float: left;
+}
 
+.note-list-info {
+  overflow: hidden;
+}
+.recommend-article,
+.recommend-project {
+  -webkit-flex: 1;
+  flex: 1;
+}
+.recommend-option:last-child {
+  margin-right: 0;
+}
+.recommend-option h2 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.recommend-option ul {
+  box-shadow: 0 0 24px rgb(199 207 225 / 41%);
+  padding: 15px;
+  border-radius: 4px;
+}
+.recommend-option li {
+  /*display: inline-block;*/
+  /* padding: 5px 0; */
+  /*margin-right: 15px;*/
+  height: 26px;
+  line-height: 26px;
+  margin-bottom: 8px;
+}
+.recommend-option li:last-child {
+  margin-bottom: 0;
+}
+.recommend-option li a {
+  display: inline-block;
+  font-size: 14px;
+  width: 100%;
+  word-wrap: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.recommend-option li a:hover {
+  color: #fe6a00;
+}
+.recommend-option li a::before {
+  content: "";
+  background: #fe6a00;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.stealth-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  background: #fff;
+}
+.stealth-scroll-bar {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  display: flex;
+  align-items: center;
+  /* display: block; */
+  list-style: outside none none;
+  /*overflow-x: auto;*/
+  white-space: nowrap;
+  padding: 10px 0 10px 5px;
+  margin: 0;
+  /***滚动条样式***/
+  scrollbar-face-color: rgba(0, 0, 0, 0);
+  scrollbar-highlight-color: rgba(0, 0, 0, 0);
+  scrollbar-3dlight-color: rgba(0, 0, 0, 0.2);
+  scrollbar-darkshadow-color: rgba(0, 0, 0, 0);
+  scrollbar-shadow-color: rgba(0, 0, 0, 0);
+  scrollbar-arrow-color: rgba(0, 0, 0, 0);
+  scrollbar-track-color: rgba(0, 0, 0, 0);
+
+  font-size: 16px;
+}
+.stealth-scroll-bar li {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  margin-right: 5px;
+}
+.stealth-scroll-bar span {
+  font-size: 18px;
+  padding: 0 3px;
+}
+.stealth-scroll-bar li a {
+  margin: 0 5px 0 5px;
+  color: #333;
+}
+.stealth-scroll-bar li.kr_active a {
+  color: #fe6a00;
+}
+.header-logo .mobile-logo {
+  display: inline-block;
+  /* width: 4.8rem;
+height: 0.9rem; */
+  width: 8rem;
+  height: 1.5rem;
+  background: url(//7n.w3cschool.cn/statics/images/logonew2.png) no-repeat
+    center center/contain;
+}
+@media (min-width: 1024px) {
+  .stealth-scroll {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  #header,
+  .right-item,
+  .side-widget-flexible,
+  .feedback-btn,
+  .hot-icon {
+    display: none !important;
+  }
+  #m-splitter {
+    overflow: hidden;
+    padding-top: 37px;
+  }
+  #full-height-container .main-container #pcover {
+    width: 95%;
+  }
+  #full-height-container .service-card {
+    flex-direction: column;
+  }
+  #full-height-container .service-card .card-list {
+    margin-bottom: 20px;
+  }
+  .left-container {
+    bottom: 0;
+    box-shadow: rgb(0 0 0 / 60%) 0px 2px 1px;
+    width: 0;
+  }
+  .left-drager {
+    display: none;
+  }
+  #pro-mian {
+    width: 100%;
+    margin-left: 0;
+  }
+  .set-btn-group {
+    display: flex;
+  }
+  .content-intro .example {
+    width: auto;
+  }
+  .portlet-title {
+    position: initial;
+    height: 0;
+  }
+  .group-wrap {
+    position: fixed;
+    top: 37px;
+    left: 0;
+    right: 0;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    width: 100% !important;
+    background: #fff;
+    z-index: 11;
+  }
+  .content-links {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+  }
+  .recommend-footer {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+  }
+  .recommend-option {
+    margin-bottom: 20px;
+  }
+  .splitter-sidebar {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 968px) {
+  #m-splitter {
+    min-width: 375px;
+    width: 100%;
+  }
+  #full-height-container .main-container #pcover {
+    width: 100%;
+  }
+  #full-height-container .logrow {
+    float: none;
+    width: 100%;
+  }
+}
+@media (max-width: 680px) {
+  .kn-btn-group,
+  .share-btn,
+  .coverinfo-desc .lately-read {
+    display: none;
+  }
+}
+.closeifream {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  z-index: 9999999;
+  color: #fff;
+  cursor: pointer;
+}
 </style>

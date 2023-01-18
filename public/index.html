@@ -13,7 +13,93 @@
   <link rel="stylesheet" href="/statics/css/common.css">
   <link rel="stylesheet" href="/statics/iconfont/iconfont.css">
   <link rel="stylesheet" href="/statics/css/w10.css">
+  <link rel="stylesheet" href="/statics/css/view.css">
+
+  <link rel="stylesheet" href="/statics/plugins/font-awesome/css/font-awesome.min.css" >
+  <link rel="stylesheet" href="/statics/css/w3.css?v=1.9" />
+  <link rel="stylesheet" href="/statics/css/style-kn-project-view.css?v=2.0"/>
+  <link rel="stylesheet" href="/statics/css/style-theme.css" />
+  <link rel="stylesheet" href="/statics/css/feedback.css">
+
+  <script src="/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+  <script src="/statics/js/feedback.js" type="text/javascript"></script>
+  <script src="/statics/js/backmore.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" href="/statics/css/project_1.css" />
+  <link rel="stylesheet" href="/statics/css/project.css" />
+  <link rel="stylesheet" href="/statics/plugins/highlight/styles/default.css" />
+  <script src="/statics/plugins/highlight/highlight.pack.js" type="text/javascript"></script>
+  <script src="/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+  <script src="/statics/plugins/jquery.slimscroll.1.38.min.js" type="text/javascript"></script>
+  <script src="/statics/js/project.leftbox.js" type="text/javascript"></script>
+  <script src="https://7n.w3cschool.cn/statics/modules/photoswipe/photoswipe.min.js" type="text/javascript"></script>
+  <script src="https://7n.w3cschool.cn/statics/modules/photoswipe/photoswipe-ui-default.min.js" type="text/javascript"></script>
 </head>
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+  }
+
+  .lrf-main {
+    padding-top: 24px;
+  }
+
+  .lrf-main .site-logo {
+    display: block;
+    width: 214px;
+    margin: 0 auto;
+  }
+
+  .lrf-main .lrf-panel {
+    margin-top: 24px;
+    padding: 0 24px;
+  }
+
+  .s-footer {
+    display: none;
+    margin-top: 96px;
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+  }
+
+  .s-footer a:hover {
+    color: #fe6a00;
+  }
+
+  @media (min-width: 576px) {
+    body {
+      background-color: #fafafa;
+    }
+
+    .lrf-main {
+      width: 420px;
+      padding-top: 96px;
+      margin: 0 auto;
+    }
+
+    .lrf-main .lrf-panel {
+      margin-top: 48px;
+      padding: 12px 40px 6px;
+      border: 1px solid #e9e9e9;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 3px 0 rgba(213, 213, 213, .7);
+    }
+
+    .s-footer {
+      display: block;
+    }
+  }
+</style>
 
 <body>
   <noscript>
@@ -145,4 +231,332 @@
   function submitSearch() {
     $(".search-box-form").submit();
   } 
+</script>
+<script src="/statics/plugins/ueditor/shCore.min.js" type="text/javascript"></script>
+<script src="/statics/js/commonfooter.js?v3.5" type="text/javascript"></script>
+<script src="/statics/js/project.view.js" type="text/javascript"></script>
+<script src="/statics/js/ajaxdo.core.js" type="text/javascript"></script>
+<!-- <script src="//appapi.w3cschool.cn/statics/js/paypraise.js" type="text/javascript"></script> -->
+<script src="/statics/js/base64.js" type="text/javascript"></script>
+
+<script>
+  $(function () {
+    var sideWidgetFlexible = $('.side-widget-flexible');
+    var sideWidgetFlexibleInner = sideWidgetFlexible.find('.side-widget-flexible-inner');
+    var sideWidgetFlexibleTrigger = sideWidgetFlexible.find('.side-widget-flexible-triger');
+    sideWidgetFlexibleTrigger.on('click', function () {
+      var _this = $(this);
+      if (_this.hasClass('up')) {
+        sideWidgetFlexible.css({
+          height: sideWidgetFlexibleInner.height(),
+          overflow: 'visible'
+        });
+        _this.removeClass('up').addClass('down');
+      } else {
+        sideWidgetFlexible.css({
+          height: 60,
+          overflow: 'hidden'
+        });
+        _this.removeClass('down').addClass('up');
+      }
+    })
+  })
+</script>
+<script>
+
+  var kn = {
+    pid: '66',
+    kmid: '',
+    kename: '',
+    pename: 'python3',
+    ismenu: '',
+    ktitle: '',
+    ktype: '',
+    original: '',
+    uid: '0',
+    fid: '',
+    flags: ''
+
+  };
+  var book = {
+    pename: 'python3',
+    bookname: 'Python3 教程'
+
+  };
+
+  var Gvar = {
+    activityflag: '',
+    remoteLangs: ['php', 'ruby', 'go', 'python', 'python3', 'c', 'cpp', 'perl', 'perl6', 'java', 'lua'],
+    supportLangs: ['php', 'ruby', 'go', 'python', 'python3', 'c', 'cpp', 'perl', 'perl6', 'java', 'lua', 'html', 'js', 'javascript'],
+  };
+
+</script>
+<script src="/statics/js/workview.js?v1" type="text/javascript"></script>
+<script>
+  $(function () {
+
+    $('.expand-collapse-trigger').on('click', function () {
+      if (document.body.clientWidth <= 968 && $('.left-container').width() < 100) {
+        $('.left-container').hide();
+        $('.left-drager').hide();
+        $('#pro-mian').css('marginLeft', '0');
+        $('.portlet-title').css({ 'width': '100%', 'left': '0', 'right': '0' });
+      }
+    });
+    if (document.body.clientWidth <= 968 && $('.left-container').width() > 100) {
+      $('.expand-collapse-trigger').click();
+    }
+    if (document.body.clientWidth <= 968 && $('.left-container').width() > 0) {
+      $('.left-container').hide();
+      $('.left-drager').hide();
+      $('#pro-mian').css('marginLeft', '0');
+      $('.portlet-title').css({ 'width': '100%', 'left': '0', 'right': '0' });
+    }
+
+    var contentMain = document.getElementById('pro-mian');
+    // 监听网页的copy(复制)事件
+    contentMain.addEventListener('copy', function (event) {
+      // clipboardData 对象是为通过编辑菜单、快捷菜单和快捷键执行的编辑操作所保留的，也就是你复制或者剪切内容
+      var clipboardData = event.clipboardData || window.clipboardData;
+      var tipWxLogin = sessionStorage.getItem('tipWxLogin');
+      // 如果未复制或者未剪切，则return出去
+      if (!clipboardData) return;
+      if (tipWxLogin == 1) return;
+      // Selection 对象，表示用户选择的文本范围或光标的当前位置。
+      var text = window.getSelection().toString();
+      var qrparams = {
+        title: "复制成功!",
+        tip: "<h4>登录后体验更佳!</h4>",
+        refer: window.location.pathname,
+        channel: 'lesson_copy_wx_scanner',
+      };
+      wechatqr(qrparams);
+      sessionStorage.setItem('tipWxLogin', 1);
+    });
+
+    if (kn.kename != '') {
+      var lastviewUrl = '//' + window.location.host + '/' + kn.pename + '/' + kn.kename + '.html';
+      localStorage.setItem("lastview_" + kn.pename, lastviewUrl);
+    }
+
+    $("#pro-mian").on("click", ".dshowtry", function (e) {
+
+      e.stopPropagation();
+      e.preventDefault();
+
+      var pre = $(this).prev();
+      var mself = this;
+
+      var code;
+      var elcode = pre.find("code");
+      var lang = pre.attr("lang");
+      if (!lang) {
+        lang = elcode.attr("lang");
+      }
+      var num = elcode.attr("num");
+      if (num) {
+        let tarcode = $("code[num='" + num + "']").not("[class*='showdemo']");
+        code = tarcode.parents("pre").data('code');
+        lang = tarcode.attr("lang");
+      } else {
+        // 过滤掉代码块中高亮的span
+        code = elcode.text();
+        // value = value.replace(/<span class="hljs[^>]+>(.*?)<\/span>/ig, '$1');
+      }
+      if (lang == 'python') {
+        lang = 'python2';
+      }
+      // alert(code)
+      code = base64encode(utf16to8(code));
+      code = encodeURIComponent(code);
+      var url = '/tryrun/runcode?lang=' + lang + '&code=' + code;
+
+      showtry(url + "&stype=nohead");
+      return;
+      if ($.inArray(lang, Gvar.remoteLangs) < 0) {
+        code = base64encode(utf16to8(code));
+        code = encodeURIComponent(code);
+
+        var url = '/tryrun/runcode?lang=' + lang + '&code=' + code;
+
+        kn.tryurl = url;
+
+        showtry(kn.tryurl + "&stype=nohead");
+
+        return;
+
+      }
+      var mode = lang;
+      var content = '', classname = '', stripcCode = '';
+      if (code != "") {
+
+        content = code;
+        var run_url = "https://run.w3cschool.cn/runcode";
+        if (mode == 'java') {
+          stripcCode = stripComments(content);
+          classinfo = stripcCode.match(/public\s{1,}class([^{]+){/);
+          if (classinfo === null) {
+            $("#demotype").html("<span style='color:red'>error:请确保有一个类是public</span>");
+            return;
+          }
+          if (typeof classinfo[1] !== 'undefined') {
+            classname = $.trim(classinfo[1]);
+          }
+          run_url = "https://run.w3cschool.cn/runcode";
+        }
+        $.ajax({
+          url: run_url,
+          type: "post",
+          data: { lang: mode, code: content, classname: classname },
+          dataType: "html",
+          success: function (msg) {
+            console.log(msg);
+            if (mode == 'php') {
+              $(mself).next(".coderes").addClass("on").html(msg);
+            } else {
+              $(mself).next(".coderes").addClass("on").html("<pre>" + HTMLEnCode(msg) + "</pre>");
+            }
+          }
+        });
+      }
+    });
+
+    $(document).on("click", function () {
+      $(".docblur").hide();
+    });
+
+    $(".onlinenote").show();
+
+    if (location.hash !== "") { // 修复锚点定位失效的问题
+      setTimeout(function () {
+        location.href = location.hash;
+      }, 300);
+    }
+
+    if (Gvar.activityflag > 0) { // 开启了活动
+      $.ajax({
+        url: "/getActivity",
+        type: "get",
+        dataType: "json",
+        success: function (msg) {
+          function loadad(content) {
+            var tpl = '<div class="activiey-area">' +
+              '<div class="activiey-bg"></div>' +
+              '<div class="activiey-main">' +
+              '<span class="close-btn"></span> <div style="max-height:500px;max-width:570px;">' + content + '</div></div>' +
+              '</div>';
+
+            $("body").append(tpl);
+
+            $(".activiey-main .close-btn").on("click", function () {
+              $(".activiey-area").hide();
+            });
+
+          }
+          if (msg.statusCode < 300) {
+            console.log(msg.data);
+            // 写入cookie
+            $.cookie("activity_showed", 1);
+            loadad(msg.data.wincontent);
+            toastr.success(msg.message);
+          } else {
+            toastr.warning(msg.message);
+          }
+        }
+      });
+    }
+    var kename = kn.kename;
+    var fid = "";
+    var uid = '0';
+    $(document).on('keyup', function (e) {
+      var keyCode = e.keyCode;
+      var prev, next;
+      if (keyCode == 37) { // 上一篇
+        prev = $(".navigation-prev");
+        if (prev.length > 0 && !prev.is(":hidden")) {
+          location.href = prev.attr("href");
+        }
+      }
+      if (keyCode == 39) { // 下一篇
+        next = $(".navigation-next");
+        if (next.length > 0 && !next.is(":hidden")) {
+          location.href = next.attr("href");
+        }
+      }
+    });
+
+    // 图片放大
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+
+    var articleImage = [];  // 图片放大后展示所用的数组
+    var options = {
+      index: 0 // 最先展示的图片索引
+    };
+    // 填充图片数组
+    document.querySelectorAll('#pro-mian img').forEach(function (image) {
+      var currentSrc = '';
+      if (image.currentSrc) {
+        currentSrc = image.currentSrc;
+      } else {
+        currentSrc = $(image).attr('src');
+      }
+      if (image.parentNode.tagName !== 'A') articleImage.push({ src: currentSrc, w: image.clientWidth * 1.5, h: image.clientHeight * 1.5 });
+    });
+
+    $('#pro-mian .content-bg img').each(function (index) {
+      $(this).on('click', function () {
+        // 修改为当前点击图片的索引
+        options = { index: index };
+
+        // 调用方法初始化放大插件
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, articleImage, options);
+        gallery.init();
+      });
+    });
+
+    /*开启计时 准备记录积分*/
+    var vcreditfull = $.cookie('ypre_vcreditfull');
+    //console.log(vcreditfull);
+    if (vcreditfull == undefined && uid != '0' && uid != '') {
+      setTimeout(function () {
+        $.ajax({
+          url: "/project/setViewCredit",
+          type: "post",
+          data: { kename: kename },
+          dataType: "json",
+          success: function (msg) {
+            var statusCode = {
+              '200': 'success',
+              '400': 'warning',
+            };
+            var toastrType = statusCode[msg.statusCode];
+            if (msg.statusCode == 300 || msg.statusCode == 400) {
+              return;
+            }
+            toastr[toastrType](msg.message);
+          }
+        });
+      }, 30000);
+    }
+
+    hljs.initHighlightingOnLoad(); //高亮代码
+
+  });
+</script>
+<script type="text/javascript">
+  var pename = "python3";
+  // 查询最后一篇
+  var lastView = localStorage.getItem("lastview_" + pename);
+  if (typeof lastView != 'undefined' && lastView != '' && lastView != null) {
+      $(".cover-btn-group").append('<a class="lately-read" href="' + lastView + '"><i class="icon-flag"></i> 最近一次阅读</a>');
+  }
+  if (typeof tempColor != 'undefined' && tempColor == 'color-theme-night') {
+      $('.toggle-dropdown-background').find('.w3c-icon').addClass('w3c-icon-day').removeClass('w3c-icon-night');
+  }
+</script>
+<script type="text/javascript">
+  var tempColor = $.cookie("color");
+  if (tempColor != undefined) {
+      $("#full-height-container").addClass(tempColor);
+  }
 </script>
