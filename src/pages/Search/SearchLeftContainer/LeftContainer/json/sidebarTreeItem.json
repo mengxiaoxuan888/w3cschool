@@ -1,0 +1,83 @@
+[
+    {
+      "id":1,
+      "dataId":"python3-l4dz323g",
+      "href":"/python3/python3-l4dz323g.html",
+      "title":"Python3 教程",
+      "name":"Python3 教程",
+      "childrens":[
+        {
+          "id":1,
+          "dataId":"python3-tutorial",
+          "href":"/python3/python3-tutorial.html",
+          "title":"Python3 教程",
+          "name":"Python3 教程",
+          "childrens":[]
+        },
+        {
+          "id":2,
+          "dataId":"python3-examples",
+          "href":"/python3/python3-examples.html",
+          "title":"Python3 实例",
+          "name":"Python3 实例",
+          "childrens":[]
+        },
+        {
+          "id":3,
+          "dataId":"python3-update",
+          "href":"#",
+          "title":"Python3 历代版本更新",
+          "name":"Python3 历代版本更新",
+          "childrens":[
+            {
+              "id":1,
+              "dataId":"python3-python310",
+              "href":"/python3/python3-python310.html",
+              "title":"Python3.10更新",
+              "name":"Python3.10更新"
+            },
+            {
+              "id":2,
+              "dataId":"python-python38",
+              "href":"/python3/python-python38.html",
+              "title":"python3.9更新",
+              "name":"python3.9更新"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id":2,
+      "dataId":"python3-thz7323h",
+      "href":"#",
+      "title":"Python3 高级教程",
+      "name":"Python3 高级教程",
+      "childrens":[
+        {
+          "id":1,
+          "dataId":"python3-reg-expressions",
+          "href":"/python3/python3-reg-expressions.html",
+          "title":"Python3 正则表达式",
+          "name":"Python3 正则表达式",
+          "childrens":[]
+        },
+        {
+          "id":2,
+          "dataId":"python3-cgi-programming",
+          "href":"/python3/python3-cgi-programming.html",
+          "title":"Python3 CGI 编程",
+          "name":"Python3 CGI 编程",
+          "childrens":[]
+        }
+      ]
+    },
+    {
+      "id":3,
+      "dataId":"python3-fzew3pf1",
+      "href":"#",
+      "title":"python内置库",
+      "name":"python内置库",
+      "childrens":[]
+    }
+]

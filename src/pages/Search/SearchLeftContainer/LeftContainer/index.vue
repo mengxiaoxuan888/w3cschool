@@ -23,7 +23,8 @@
             </div>
           </a>
         </div>
-        <div class="sidebar-pro-nav">
+        <!--赞，收藏-->
+        <!-- <div class="sidebar-pro-nav">
           <ul class="page-sidebar-menu">
             <li class="pro-m">
               <a
@@ -44,12 +45,10 @@
                 ><i class="icon-star-empty"></i> <span>收藏</span></a
               >
             </li>
-            <!-- <li class="pro-m">
-<a href="javascript:;" title="分享" class="share-btn  popup_more bdsharebuttonbox" data-cmd="more" data-bd-bind="1472196006351"><i class="icon-share"></i> 分享</a>
-</li> -->
           </ul>
-        </div>
-        <div class="sidebar-menu">
+        </div> -->
+        <!--更多文章-->
+        <!-- <div class="sidebar-menu">
           <ul>
             <li class="nav-item">
               <a href="/python3/list/" title="更多文章"
@@ -58,7 +57,7 @@
               >
             </li>
           </ul>
-        </div>
+        </div> -->
         <!--左侧栏导航 start-->
         <div class="sidebar-nav">
           <ul class="treeth">
@@ -88,197 +87,30 @@
         <div class="sidebar-content">
           <div class="sidebar-tree">
             <div class="sidebar-tree-content">
-              <div
-                class="dd"
-                id="nestable_handbook"
-                data-tid=""
-                data-id="handbook"
-              >
+              <div class="dd" id="nestable_handbook" data-tid="" data-id="handbook">
                 <ol class="dd-list">
-                  <li class="dd-item" data-id="python3-l4dz323g">
+                  <li class="dd-item" v-for="item in sidebarTreeItem" :key="item.id" :data-id="item.dataId" >
                     <div class="dd-content folder-open">
                       <i class="folder icon-folder-open"></i>
-                      <a
-                        href="/python3/python3-l4dz323g.html"
-                        title="Python3 教程"
-                        >Python3 教程</a
-                      >
+                      <a :href="item.href" :title="item.title">{{item.name}}</a>
                     </div>
                     <ol class="dd-list">
-                      <li class="dd-item" data-id="python3-tutorial">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-tutorial.html"
-                            title="Python3 教程"
-                            >Python3 教程</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                      <li class="dd-item" data-id="python3-intro">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-intro.html"
-                            title="Python3 简介"
-                            >Python3 简介</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                      <li class="dd-item" data-id="python3-examples">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-examples.html"
-                            title="Python3 实例"
-                            >Python3 实例</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                      <li class="dd-item" data-id="python3-update">
+                      <li class="dd-item" v-for="list in item.childrens" :key="list.id" :data-id="list.dataId">
                         <div class="dd-content folder-open">
                           <i class="folder icon-folder-open"></i>
-                          <a title="Python3 历代版本更新"
-                            >Python3 历代版本更新</a
-                          >
+                          <a :href="list.href" :title="list.title">{{list.name}}</a>
                         </div>
-                        <ol class="dd-list">
-                          <li class="dd-item" data-id="python3-python310">
+                        <ol class="dd-list" v-if="list.childrens">
+                          <li class="dd-item" v-for="l in list.childrens" :key="l.id" :data-id="l.dataId">
                             <div class="dd-content">
                               <i class="ic-folder-open2"></i>
-                              <a
-                                href="/python3/python3-python310.html"
-                                title="Python3.10更新"
-                                >Python3.10更新</a
-                              >
-                            </div>
-                            <ol class="dd-list"></ol>
-                          </li>
-                          <li class="dd-item" data-id="python3-lfy73lto">
-                            <div class="dd-content">
-                              <i class="ic-folder-open2"></i>
-                              <a
-                                href="/python3/python3-lfy73lto.html"
-                                title="Python3.11更新"
-                                >Python3.11更新</a
-                              >
-                            </div>
-                            <ol class="dd-list"></ol>
-                          </li>
-                          <li class="dd-item" data-id="python-python38">
-                            <div class="dd-content">
-                              <i class="ic-folder-open2"></i>
-                              <a
-                                href="/python3/python-python38.html"
-                                title="python3.9更新"
-                                >python3.9更新</a
-                              >
+                              <a :href="l.href" :title="l.title">{{l.name}}</a>
                             </div>
                             <ol class="dd-list"></ol>
                           </li>
                         </ol>
                       </li>
                     </ol>
-                  </li>
-                  <li class="dd-item" data-id="python3-thz7323h">
-                    <div class="dd-content folder-open">
-                      <i class="folder icon-folder-open"></i>
-                      <a title="Python3 高级教程">Python3 高级教程</a>
-                    </div>
-                    <ol class="dd-list">
-                      <li class="dd-item" data-id="python3-reg-expressions">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-reg-expressions.html"
-                            title="Python3 正则表达式"
-                            >Python3 正则表达式</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                      <li class="dd-item" data-id="python3-cgi-programming">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-cgi-programming.html"
-                            title="Python3 CGI 编程"
-                            >Python3 CGI 编程</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                      <li class="dd-item" data-id="python3-mysql">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-mysql.html"
-                            title="Python3 MySQL 数据库连接"
-                            >Python3 MySQL 数据库连接</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                    </ol>
-                  </li>
-                  <li class="dd-item" data-id="python3-v7hz3osl">
-                    <div class="dd-content folder-open">
-                      <i class="folder icon-folder-open"></i>
-                      <a title="Python 技术专题">Python 技术专题</a>
-                    </div>
-                    <ol class="dd-list">
-                      <li class="dd-item" data-id="python3-mxvb3osm">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-mxvb3osm.html"
-                            title="python 解决pip下载缓慢的方法"
-                            >python 解决pip下载缓慢的方法</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                      <li class="dd-item" data-id="python3-rsxk3oso">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="/python3/python3-rsxk3oso.html"
-                            title="python 怎么使用pip进行包管理"
-                            >python 怎么使用pip进行包管理</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                    </ol>
-                  </li>
-                  <li class="dd-item" data-id="python3-ev7r3e1q">
-                    <div class="dd-content folder-open">
-                      <i class="folder icon-folder-open"></i>
-                      <a title="相关教程">相关教程</a>
-                    </div>
-                    <ol class="dd-list">
-                      <li class="dd-item" data-id="python3-7dgf3e1s">
-                        <div class="dd-content">
-                          <i class="ic-folder-open2"></i>
-                          <a
-                            href="https://www.w3cschool.cn/python/"
-                            title="Python2 教程"
-                            >Python2 教程</a
-                          >
-                        </div>
-                        <ol class="dd-list"></ol>
-                      </li>
-                    </ol>
-                  </li>
-                  <li class="dd-item" data-id="python3-fzew3pf1">
-                    <div class="dd-content">
-                      <i class="folder icon-folder-open"></i>
-                      <a title="python内置库">python内置库</a>
-                    </div>
-                    <ol class="dd-list"></ol>
                   </li>
                 </ol>
               </div>
@@ -322,6 +154,93 @@
 <script>
 export default {
   name: "LeftContainer",
+  data() {
+    return {
+      sidebarTreeItem:[
+        {
+          "id":1,
+          "dataId":"python3-l4dz323g",
+          "href":"/python3/python3-l4dz323g.html",
+          "title":"Python3 教程",
+          "name":"Python3 教程",
+          "childrens":[
+            {
+              "id":1,
+              "dataId":"python3-tutorial",
+              "href":"/python3/python3-tutorial.html",
+              "title":"Python3 教程",
+              "name":"Python3 教程",
+              "childrens":[]
+            },
+            {
+              "id":2,
+              "dataId":"python3-examples",
+              "href":"/python3/python3-examples.html",
+              "title":"Python3 实例",
+              "name":"Python3 实例",
+              "childrens":[]
+            },
+            {
+              "id":3,
+              "dataId":"python3-update",
+              "href":"#",
+              "title":"Python3 历代版本更新",
+              "name":"Python3 历代版本更新",
+              "childrens":[
+                {
+                  "id":1,
+                  "dataId":"python3-python310",
+                  "href":"/python3/python3-python310.html",
+                  "title":"Python3.10更新",
+                  "name":"Python3.10更新",
+                },
+                {
+                  "id":2,
+                  "dataId":"python-python38",
+                  "href":"/python3/python-python38.html",
+                  "title":"python3.9更新",
+                  "name":"python3.9更新",
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id":2,
+          "dataId":"python3-thz7323h",
+          "href":"#",
+          "title":"Python3 高级教程",
+          "name":"Python3 高级教程",
+          "childrens":[
+            {
+              "id":1,
+              "dataId":"python3-reg-expressions",
+              "href":"/python3/python3-reg-expressions.html",
+              "title":"Python3 正则表达式",
+              "name":"Python3 正则表达式",
+              "childrens":[]
+            },
+            {
+              "id":2,
+              "dataId":"python3-cgi-programming",
+              "href":"/python3/python3-cgi-programming.html",
+              "title":"Python3 CGI 编程",
+              "name":"Python3 CGI 编程",
+              "childrens":[]
+            },
+          ]
+        },
+        {
+          "id":3,
+          "dataId":"python3-fzew3pf1",
+          "href":"#",
+          "title":"python内置库",
+          "name":"python内置库",
+          "childrens":[]
+        },
+      ]
+    }
+  },
 };
 </script>
 
