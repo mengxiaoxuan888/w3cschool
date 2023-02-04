@@ -16,7 +16,10 @@
           <h3 class="project-name">{{item.name}}</h3>
           <ul class="project-list">
             <li class="project-list-item-wrap" v-for="list in item.projectList" :key="list.id">
-              <a class="clearfix project-list-item" :href="list.href" :title="list.title">
+              <!-- 原始html中我们使用a标签，实现页面的跳转 -->
+              <!-- <a class="clearfix project-list-item" :href="list.href" :title="list.title"> -->
+              <!-- 在vue-route中应该使用下面这个 -->
+              <router-link class="clearfix project-list-item" :to="list.href" :title="list.title">  
                 <div class="fl cover">
                   <img :src="list.src" :alt="list.alt" width="64" height="64"/>
                 </div>
@@ -26,7 +29,8 @@
                     {{list.info}}
                   </p>
                 </div>
-              </a>
+              <!-- </a> -->
+              </router-link>
             </li>
           </ul>
         </div>
@@ -65,7 +69,7 @@ export default {
           "projectList":[
             {
               "id":1,
-              "href":"//www.w3cschool.cn/python3/",
+              "href":"/search/python",
               "title":"Python3 教程",
               "src":"//atts.w3cschool.cn/attachments/cover/cover_python3.png?imageView2/1/w/64/h/64&t=1666251302",
               "alt":"Python3 教程",

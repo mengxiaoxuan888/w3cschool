@@ -2,7 +2,7 @@
   <div id="header">
     <div class="clearfix index-container">
       <h1 class="fl h-logo">
-        <a class="img" href="//www.w3cschool.cn" title="w3cschool">
+        <router-link class="img" to="/" title="w3cschool">
           <img
             src="./images/indexlogo.png"
             alt="w3cschool"
@@ -12,7 +12,7 @@
           <div style="text-indent: -9999px">
             w3cschool - 编程狮，随时随地学编程
           </div>
-        </a>
+        </router-link>
       </h1>
 
       <div class="fr h-right">
@@ -44,9 +44,9 @@
 
         <div class="fl sig-box">
           <div>
-            <a class="link" href="//www.w3cschool.cn/register?refer=/">注册</a
-            ><span class="sep">|</span
-            ><a class="link" href="//www.w3cschool.cn/login?refer=/">登录</a>
+            <router-link class="link" to="/register">注册</router-link>
+            <span class="sep">|</span>
+            <router-link class="link" to="/login">登录</router-link>
           </div>
         </div>
       </div>
