@@ -19,9 +19,9 @@ import MainContainer from "./MainContainer"
 export default {
     name: "SearchLeftContainer",
     components:{
-        LeftContainer,
-        MainContainer
-    }
+    LeftContainer,
+    MainContainer
+}
 };
 </script>
 

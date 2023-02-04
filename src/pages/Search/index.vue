@@ -7,9 +7,10 @@
       <!-- 教程内容页头部 -->
       <!--header组件-->
       <SearchHeader/>
-
       <!-- 下面部分 -->
-      <SearchLeftContainer/>
+      <!-- <SearchLeftContainer/> -->
+      <!-- 真正需要展示的内容，是python就展示python -->
+      <router-view></router-view>
     </div>
 
     <!-- 侧边小部件 -->
@@ -82,7 +83,6 @@
 
 <script>
 import SearchHeader from "./SearchHeader"
-import SearchLeftContainer from "./SearchLeftContainer"
 import ToolBar from "../../components/ToolBar"
 
 export default {
@@ -94,7 +94,6 @@ export default {
   },
   components:{
     SearchHeader,
-    SearchLeftContainer,
     ToolBar
   }
 };
